@@ -4,7 +4,7 @@ echo -e "\033]6;1;bg;green;brightness;44\a"
 echo -e "\033]6;1;bg;blue;brightness;52\a"
 
 
-for file in ~/zsh/*.zsh; do
+for file in ~/.zsh/*.zsh; do
   source $file
 done
 
