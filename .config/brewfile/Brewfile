@@ -1,0 +1,81 @@
+
+# tap repositories and their packages
+
+# Other Homebrew packages
+brew autoconf
+brew brew-file
+brew exa
+brew fribidi
+brew fzf
+brew gawk
+brew gdbm
+brew gettext
+brew ghq
+brew gmp
+brew goenv
+brew jemalloc
+brew jo
+brew jq
+brew libevent
+brew libtermkey
+brew libuv
+brew libvterm
+brew luajit
+brew mackup
+brew mas
+brew mpfr
+brew msgpack
+brew neovim
+brew oniguruma
+brew openssl
+brew pkg-config
+brew pyenv
+brew python@2
+brew rbenv
+brew readline
+brew rlwrap
+brew ruby-build
+brew sqlite
+brew tmux
+brew translate-shell
+brew tree
+brew unibilium
+brew zplug
+brew zsh
+brew zsh-completions
+
+# Other Cask applications
+cask alfred
+cask dash
+cask google-chrome
+cask google-japanese-ime
+cask iterm2
+cask karabiner
+cask karabiner-elements
+cask kindle
+cask liteicon
+cask marshallofsound-google-play-music-player
+cask sip
+cask skitch
+cask slack
+cask sourcetree
+cask vanilla
+cask vlc
+
+# App Store applications
+appstore 937984704 Amphetamine (3.0.2)
+appstore 1091189122 Bear (1.5.5)
+appstore 406056744 Evernote (7.4)
+appstore 682658836 GarageBand (10.3.1)
+appstore 408981434 iMovie (10.1.9)
+appstore 409183694 Keynote (8.1)
+appstore 926036361 LastPass (4.0.1)
+appstore 441258766 Magnet (2.2.2)
+appstore 409203825 Numbers (5.1)
+appstore 409201541 Pages (7.1)
+appstore 568494494 Pocket (1.7.9)
+appstore 880001334 Reeder (3.2)
+appstore 1176895641 Spark (2.0.10)
+appstore 425424353 The Unarchiver (4.0.0)
+appstore 410628904 Wunderlist (3.4.8)
+appstore 497799835 Xcode (9.4.1)
