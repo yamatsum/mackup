@@ -1,0 +1,154 @@
+# Dark powered Vim/Neovim plugin manager
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# File-type sensible comments
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# Handles bracketed-paste-mode
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+# Delete/change/add parentheses/quotes/XML-tags/much more with ease
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# The standard snippets repository for neosnippet
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# Asynchronous Lint Engine
+[[plugins]]
+repo = 'w0rp/ale'
+
+# Insert several candidates with a single key
+[[plugins]]
+repo = 'kana/vim-smartchr'
+on_i = 1
+
+# Open URI with your favorite browser
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# Search Dash.app [\d]
+[[plugins]]
+repo = 'rizzatti/dash.vim'
+
+# Simple templates plugin
+[[plugins]]
+repo = 'aperezdc/vim-template'
+
+# search status
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+
+# responsive tabline
+[[plugins]]
+repo = 'yami-beta/vim-responsive-tabline'
+
+# Vim plugin to dim inactive windows
+[[plugins]]
+repo = 'blueyed/vim-diminactive'
+
+# Insert or delete brackets, parens, quotes in pair
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# Underlines the word under the cursor
+[[plugins]]
+repo = 'itchyny/vim-cursorword'
+
+# Vim motions on speed!
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+# fzf
+[[plugins]]
+repo = '/usr/local/opt/fzf'
+
+# fzf-vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
+# Distraction-free writing in Vim
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+
+# A simple task and time manager for vim.
+# [[plugins]]
+# repo = 'soywod/kronos.vim'
+
+#---------------------------------------------------------------------------
+# Test:
+#
+
+# asynchronous build and test dispatcher
+# [[plugins]]
+# repo = 'tpope/vim-dispatch'
+
+# Run your tests at the speed of thought
+# [[plugins]]
+# repo = 'janko-m/vim-test'
+# depends = ['vim-dispatch']
+
+#---------------------------------------------------------------------------
+# Nerdtree:
+#
+
+# A tree explorer
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# NERDTree and tabs together
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+# Extra syntax and highlight for nerdtree files
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+# A plugin of NERDTree showing git status
+# [[plugins]]
+# repo = 'Xuyuanp/nerdtree-git-plugin'
+
+#---------------------------------------------------------------------------
+# View:
+#
+
+# A light and configurable statusline
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# Displaying the indention levels with thin vertical lines
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# Highlights trailing whitespace in red and provides :FixWhitespace to fix it.
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# Adds filetype glyphs (icons) to other plugins such as NERDTree, lightline.vim
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+# A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+#---------------------------------------------------------------------------
+# ColorScheme:
+#
+
+# A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+# Adaptation of one-light and one-dark colorschemes for Vim
+[[plugins]]
+repo = 'rakr/vim-one'
+
+# A 24bit colorscheme for Vim, Airline and Lightline
+[[plugins]]
+repo = 'jacoborus/tender'

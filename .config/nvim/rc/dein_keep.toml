@@ -1,0 +1,74 @@
+# Dark powered asynchronous unite all interfaces for neovim
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+# if = 'has("nvim")'
+
+# Run commands quickly.
+# [[plugins]]
+# repo = 'thinca/vim-quickrun'
+
+
+# Plugin to toggle, display and navigate marks
+[[plugins]]
+repo = 'kshenoy/vim-signature'
+
+# Deoplete source for emoji codes
+[[plugins]]
+repo = 'fszymanski/deoplete-emoji'
+
+# Syntax source for neocomplete/deoplete/ncm
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+# Brings physics-based smooth scrolling to the Vim world!
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
+
+# Vim plugin that displays tags in a window, ordered by scope
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+# Git wrapper
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
+
+# edit evernote on vim.
+# [[plugins]]
+# repo = 'kakkyz81/evervim'
+
+# Changes the splash of Vim as you like.
+# [[plugins]]
+# repo = 'thinca/vim-splash'
+
+# The interactive scratchpad for hackers.
+# [[plugins]]
+# repo = 'metakirby5/codi.vim'
+
+#---------------------------------------------------------------------------
+# ColorScheme:
+#
+
+# Generate a beautiful color swatch of the current color scheme
+[[plugins]]
+repo = 'cocopon/colorswatch.vim'
+
+# Material theme for vim
+[[plugins]]
+repo = 'jdkanani/vim-material-theme'
+
+# A vim theme inspired by Atom's default dark theme
+[[plugins]]
+repo = 'gosukiwi/vim-atom-dark'
+
+# Monokai color scheme for Vim converted from Textmate theme
+[[plugins]]
+repo = 'sickill/vim-monokai'
+
+# Oceanic Next theme for neovim
+[[plugins]]
+repo = 'mhartington/oceanic-next'
+
+# A 24bit colorscheme for Vim, Airline and Lightline
+[[plugins]]
+repo = 'jacoborus/tender'
+

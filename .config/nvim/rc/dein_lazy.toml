@@ -1,0 +1,21 @@
+# Snippet support
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
+on_i = 1
+on_ft = ['snippet']
+
+# Next generation completion framework
+[[plugins]]
+repo = 'Shougo/neocomplete'
+if = 'has("lua")'
+if = '!has("nvim")'
+on_i = 1
+
+# Dark powered asynchronous completion framework for neovim
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = 'has("nvim")'
+on_i = 1
+
