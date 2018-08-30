@@ -25,7 +25,9 @@ brew mackup
 brew mas
 brew mpfr
 brew msgpack
+brew ndenv
 brew neovim
+brew node-build
 brew oniguruma
 brew openssl
 brew pkg-config
@@ -36,6 +38,7 @@ brew readline
 brew rlwrap
 brew ruby-build
 brew sqlite
+brew tig
 brew tmux
 brew translate-shell
 brew tree
