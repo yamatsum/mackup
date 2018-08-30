@@ -207,6 +207,7 @@ build = 'npm -g install typescript'
 [[plugins]]
 repo = 'mhartington/nvim-typescript'
 on_ft = ['typescript', 'typescript.tsx']
+build = './install.sh' # And try to run :UpdateRemotePlugins if you havn't already.
 
 # Typescript syntax files for Vim
 [[plugins]]
