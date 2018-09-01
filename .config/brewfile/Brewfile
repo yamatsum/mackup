@@ -13,6 +13,7 @@ brew gettext
 brew ghq
 brew gmp
 brew goenv
+brew icu4c
 brew jemalloc
 brew jo
 brew jq
@@ -27,9 +28,11 @@ brew mpfr
 brew msgpack
 brew ndenv
 brew neovim
+brew node
 brew node-build
 brew oniguruma
 brew openssl
+brew pcre
 brew pkg-config
 brew pyenv
 brew python@2
@@ -43,6 +46,8 @@ brew tmux
 brew translate-shell
 brew tree
 brew unibilium
+brew watchman
+brew yarn --without-node
 brew zplug
 brew zsh
 brew zsh-completions
