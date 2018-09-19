@@ -2,7 +2,7 @@ if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
 
-function ssh() {
+function sshrc() {
   if [[ -n $(printenv TMUX) ]] ; then
     local pane_id=`tmux display -p '#{pane_id}'`
 

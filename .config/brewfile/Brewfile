@@ -58,6 +58,7 @@ cask alfred
 cask dash
 cask google-chrome
 cask google-japanese-ime
+cask hyperswitch
 cask iterm2
 cask karabiner
 cask karabiner-elements

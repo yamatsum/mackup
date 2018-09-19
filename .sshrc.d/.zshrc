@@ -29,5 +29,6 @@ alias dip="d image prune"
 alias dis="d images"
 alias db="d bulid"
 alias dex="d exec -i -t"
+alias dsp="d system prune"
 # docker-compose alias
 alias dc="sudo docker-compose"
