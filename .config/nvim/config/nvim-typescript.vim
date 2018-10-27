@@ -29,3 +29,5 @@ let g:nvim_typescript#default_signs =
       \   }
       \}
       \])
+" Use ale for lint
+let g:nvim_typescript#diagnostics_enable = 0
