@@ -3,6 +3,7 @@ let g:ale_linters = {
       \ 'go': ['gometalinter'],
       \ }
 let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
       \ 'typescript': ['prettier'],
       \ 'go': ['gofmt', 'goimports'],
       \ }
