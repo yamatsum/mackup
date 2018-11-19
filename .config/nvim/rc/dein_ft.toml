@@ -225,6 +225,15 @@ repo = 'HerringtonDarkholme/yats.vim'
 on_ft = ['typescript', 'typescript.tsx']
 
 #---------------------------------------------------------------------------
+# Dart:
+#
+
+# Syntax highlighting for Dart in Vim
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = ['dart']
+
+#---------------------------------------------------------------------------
 # YAML:
 #
 
