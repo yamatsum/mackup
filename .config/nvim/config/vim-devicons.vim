@@ -9,7 +9,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " 
 let g:DevIconsDefaultFolderOpenSymbol = '' " 
-let g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol =  ''
+let g:WebDevIconsUnicodeDecorateFolderNodesSymlinkSymbol =  ''
 " ファイル別アイコン
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 " let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''

@@ -63,3 +63,5 @@ autocmd filetype nerdtree highlight md_icon ctermbg=none ctermfg=magenta guifg=#
 autocmd filetype nerdtree syn match md_icon ## containedin=NERDTreeFile,md
 autocmd filetype nerdtree highlight sh_icon ctermbg=none ctermfg=green guifg=#90A959
 autocmd filetype nerdtree syn match sh_icon ## containedin=NERDTreeFile,sh
+autocmd filetype nerdtree highlight go_icon ctermbg=none ctermfg=blue guifg=#8BC5E6
+autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFile
