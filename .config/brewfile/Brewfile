@@ -1,6 +1,8 @@
 
 # tap repositories and their packages
 
+tap dart-lang/dart
+
 # Other Homebrew packages
 brew ag
 brew autoconf
