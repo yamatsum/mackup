@@ -5,17 +5,14 @@ depends = ['neosnippet-snippets']
 on_i = 1
 on_ft = ['snippet']
 
-# Next generation completion framework
+# The standard snippets repository for neosnippet
 [[plugins]]
-repo = 'Shougo/neocomplete'
-if = 'has("lua")'
-if = '!has("nvim")'
+repo = 'Shougo/neosnippet-snippets'
 on_i = 1
 
-# Dark powered asynchronous completion framework for neovim
+# Dark powered asynchronous completion framework for neovim/Vim8
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
-if = 'has("nvim")'
 on_i = 1
 

@@ -20,7 +20,7 @@
 
 ## A nicer Python indentation style
 [[plugins]]
-repo = "hynek/vim-python-pep8-indent"¬
+repo = "hynek/vim-python-pep8-indent"
 on_ft = 'python'
 
 # Activate the versions and the virtualenvs of pyenv within a live VIM session
@@ -91,16 +91,17 @@ on_ft = 'html'
 # Add CSS3 syntax support
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
-on_ft = 'css'
+# on_ft = 'css'
 
 # Preview colours in source code
 [[plugins]]
 repo = 'ap/vim-css-color'
+# on_ft = 'css'
 
 # emmet for vim
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'css', 'javascript', 'php']
+# on_ft = ['html', 'css', 'javascript', 'php']
 
 # Auto close (X)HTML tags
 [[plugins]]
@@ -114,11 +115,16 @@ on_ft = ['html', 'xml']
 # Context filetype library for Vim script
 [[plugins]]
 repo = "Shougo/context_filetype.vim"
-on_ft = ['html', 'markdown']
+# on_ft = ['html', 'markdown']
 
 #---------------------------------------------------------------------------
 # Javascript:
 #
+
+# Vastly improved Javascript indentation and syntax support in Vim
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
 
 # A semantic javascript syntax highlighter (uses babylon) for Neovim
 # [[plugins]]
@@ -126,30 +132,25 @@ on_ft = ['html', 'markdown']
 # on_ft = ['javascript', 'javascript.jsx']
 # build = './install.sh'
 
-# Syntax and indent plugin for React jsx.
-[[plugins]]
-repo = 'neoclide/vim-jsx-improve'
-on_ft = ['javascript', 'javascript.jsx']
-
-# Vastly improved Javascript indentation and syntax support in Vim
-# [[plugins]]
-# repo = 'pangloss/vim-javascript'
-# on_ft = ['javascript', 'javascript.jsx']
-
-# YAJS.vim: Yet Another JavaScript Syntax for Vim
-# [[plugins]]
-# repo = 'othree/yajs.vim'
-# on_ft = ['javascript', 'javascript.jsx']
-
 # React JSX syntax pretty highlighting for vim.
 # [[plugins]]
 # repo = 'MaxMEllon/vim-jsx-pretty'
+# on_ft = ['javascript.jsx', 'typescript.tsx']
+
+# Syntax and indent plugin for React jsx.
+# [[plugins]]
+# repo = 'neoclide/vim-jsx-improve'
 # on_ft = ['javascript', 'javascript.jsx']
 
+# YAJS.vim: Yet Another JavaScript Syntax for Vim
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript', 'javascript.jsx']
+
 # ES.Next syntax for Vim
-# [[plugins]]
-# repo = 'othree/es.next.syntax.vim'
-# on_ft = ['javascript', 'javascript.jsx']
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript', 'javascript.jsx']
 
 # Syntax for JavaScript libraries
 # [[plugins]]
@@ -159,11 +160,6 @@ on_ft = ['javascript', 'javascript.jsx']
 # JavaScript indentation for VIM
 # [[plugins]]
 # repo = 'gavocanov/vim-js-indent'
-# on_ft = ['javascript', 'javascript.jsx']
-
-# A vim javascript indent script
-# [[plugins]]
-# repo = 'jiangmiao/simple-javascript-indenter'
 # on_ft = ['javascript', 'javascript.jsx']
 
 # Tern plugin for Vim
@@ -193,15 +189,20 @@ on_ft = ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
 repo = 'moll/vim-node'
 on_ft = 'javascript'
 
+# Vim bundle for http://styled-components.com based javascript files.
+[[plugins]]
+repo = 'styled-components/vim-styled-components'
+on_ft = ['javascript.jsx', 'typescript.tsx']
+rev = 'main'
+
 #---------------------------------------------------------------------------
 # Typescript:
 #
 
-# deoplete.nvim source for javascript
-[[plugins]]
-repo = 'mhartington/deoplete-typescript'
-on_ft = ['typescript', 'typescript.tsx']
-build = 'npm -g install typescript'
+# Typescript syntax files for Vim
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
+# on_ft = ['typescript', 'typescript.tsx']
 
 # Typescript tooling for Neovim
 [[plugins]]
@@ -209,20 +210,15 @@ repo = 'mhartington/nvim-typescript'
 on_ft = ['typescript', 'typescript.tsx']
 build = './install.sh' # And try to run :UpdateRemotePlugins if you havn't already.
 
-# Typescript syntax files for Vim
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript', 'typescript.tsx']
-
-# Syntax highlighting and indenting for TSX
-[[plugins]]
-repo = 'ianks/vim-tsx'
-on_ft = ['typescript', 'typescript.tsx']
-
 # Yet Another TypeScript Syntax: The most advanced TypeScript Syntax Highlighting in Vim
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
 on_ft = ['typescript', 'typescript.tsx']
+
+# React JSX syntax highlighting for vim and Typescript
+# [[plugins]]
+# repo = 'peitalin/vim-jsx-typescript'
+# on_ft = ['typescript', 'typescript.tsx']
 
 #---------------------------------------------------------------------------
 # Dart:

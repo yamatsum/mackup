@@ -14,10 +14,6 @@ repo = 'ConradIrwin/vim-bracketed-paste'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-# The standard snippets repository for neosnippet
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
 # Asynchronous Lint Engine
 [[plugins]]
 repo = 'w0rp/ale'
@@ -47,9 +43,9 @@ repo = 'osyo-manga/vim-anzu'
 [[plugins]]
 repo = 'yami-beta/vim-responsive-tabline'
 
-# Vim plugin to dim inactive windows
+# An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
 [[plugins]]
-repo = 'blueyed/vim-diminactive'
+repo = 'TaDaa/vimade'
 
 # Insert or delete brackets, parens, quotes in pair
 [[plugins]]
@@ -75,10 +71,6 @@ depends = 'fzf'
 # Distraction-free writing in Vim
 [[plugins]]
 repo = 'junegunn/goyo.vim'
-
-# A simple task and time manager for vim.
-# [[plugins]]
-# repo = 'soywod/kronos.vim'
 
 #---------------------------------------------------------------------------
 # Test:

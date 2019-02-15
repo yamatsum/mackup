@@ -7,6 +7,9 @@
 # [[plugins]]
 # repo = 'thinca/vim-quickrun'
 
+# Vim plugin to dim inactive windows
+# [[plugins]]
+# repo = 'blueyed/vim-diminactive'
 
 # Plugin to toggle, display and navigate marks
 [[plugins]]
@@ -43,6 +46,10 @@ repo = 'majutsushi/tagbar'
 # The interactive scratchpad for hackers.
 # [[plugins]]
 # repo = 'metakirby5/codi.vim'
+
+# A simple task and time manager for vim.
+# [[plugins]]
+# repo = 'soywod/kronos.vim'
 
 #---------------------------------------------------------------------------
 # ColorScheme:
