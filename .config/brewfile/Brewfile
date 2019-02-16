@@ -5,6 +5,7 @@ tap dart-lang/dart
 
 # Other Homebrew packages
 brew ag
+brew anyenv
 brew autoconf
 brew brew-file
 brew exa
@@ -15,7 +16,6 @@ brew gdbm
 brew gettext
 brew ghq
 brew gmp
-brew goenv
 brew icu4c
 brew jemalloc
 brew jo
@@ -29,20 +29,14 @@ brew mackup
 brew mas
 brew mpfr
 brew msgpack
-brew ndenv
+brew ncurses
 brew neovim
-brew node
-brew node-build
 brew oniguruma
 brew openssl
 brew pcre
 brew pkg-config
-brew pyenv
-brew python@2
-brew rbenv
 brew readline
 brew rlwrap
-brew ruby-build
 brew sqlite
 brew tig
 brew tmux
@@ -51,7 +45,6 @@ brew tree
 brew unibilium
 brew watchman
 brew xz
-brew yarn --without-node
 brew zplug
 brew zsh
 brew zsh-completions
