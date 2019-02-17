@@ -6,8 +6,8 @@ let g:lightline = {
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'filename', 'lineinfo', 'ale' ] ],
-      \   'right': [ [ 'fileencoding', 'filetype' ] ]
+      \             [ 'filename', 'lineinfo', 'ale' ] ],
+      \   'right': [ [ 'fileencoding', 'filetype', 'fugitive' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ [ 'filename' ] ],
@@ -17,13 +17,18 @@ let g:lightline = {
       \   'close': '%999X  '
       \ },
       \ 'component_function': {
+      \   'mode': 'LightLineMode',
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
+      \   'fileencoding': 'LightlineFileencoding',
       \   'ale': 'ALEGetStatusLine'
+      \ },
+      \ 'component_expand': {
+      \   'lineinfo': 'LightLineLineinfo',
       \ },
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' },
@@ -31,21 +36,30 @@ let g:lightline = {
       \ 'tabline_subseparator': { 'left': '', 'right': '' },
       \ 'enable': { 'tabline': 0 }
       \ }
-      " \ 'separator': { 'left': '', 'right': '' },
-      " \ 'subseparator': { 'left': '', 'right': '' },
 " lightlineでdeviconを表示
 function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  return expand('%:t') =~ 'NERD_tree' ? '' :
+        \ winwidth(0) > 70 ? (strlen(&filetype) ? WebDevIconsGetFileTypeSymbol() . ' ' . &filetype: 'no ft') : ''
 endfunction
 function! MyFileformat()
   return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+function! LightLineMode()
+  return expand('%:t') =~ 'NERD_tree' ? '' :
+        \ lightline#mode()
+endfunction
+function! LightLineLineinfo()
+  return expand('%:t') =~ 'NERD_tree' ? '' : '%3l:%-2v'
+endfunction
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 " ファイルの変更状態
 function! LightLineModified()
   if &filetype == "help"
     return ""
   elseif &modified
-    return "*"
+    return " "
   elseif &modifiable
     return ""
   else
@@ -66,13 +80,14 @@ endfunction
 function! LightLineFugitive()
   if exists("*fugitive#head")
     let branch = fugitive#head()
-    return branch !=# '' ? ''.branch : ''
+    return branch !=# '' ? ' '.branch : ''
   endif
   return ''
 endfunction
 " ファイル名
 function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+  return expand('%:t') =~ 'NERD_tree' ? '' :
+        \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
         \ ('' != expand('%:t') ? expand('%:t') : 'untitled') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
