@@ -72,6 +72,10 @@ depends = 'fzf'
 [[plugins]]
 repo = 'junegunn/goyo.vim'
 
+# A Git wrapper so awesome, it should be illegal
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
 #---------------------------------------------------------------------------
 # Test:
 #

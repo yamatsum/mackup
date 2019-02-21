@@ -31,10 +31,6 @@ repo = 'yuttie/comfortable-motion.vim'
 [[plugins]]
 repo = 'majutsushi/tagbar'
 
-# Git wrapper
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-
 # edit evernote on vim.
 # [[plugins]]
 # repo = 'kakkyz81/evervim'

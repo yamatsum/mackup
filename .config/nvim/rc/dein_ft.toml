@@ -242,6 +242,16 @@ on_ft = 'ansible'
 # Markdown:
 #
 
+# VIM Table Mode for instant table creation.
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = 'markdown'
+
+# Realtime preview by Vim. (Markdown, reStructuredText, textile)
+[[plugins]]
+repo = 'previm/previm'
+on_ft = 'markdown'
+
 #---------------------------------------------------------------------------
 # Json:
 #

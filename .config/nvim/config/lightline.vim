@@ -57,13 +57,13 @@ endfunction
 " ファイルの変更状態
 function! LightLineModified()
   if &filetype == "help"
-    return ""
+    return " "
   elseif &modified
-    return " "
+    return ""
   elseif &modifiable
-    return ""
+    return " "
   else
-    return ""
+    return " "
   endif
 endfunction
 " ファイルの権限
@@ -71,16 +71,17 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "" "  
+    return "" "   
   " else
-  "   return "" 
+  "   return ""  
   endif
 endfunction
 " ファイルのGitの状態
 function! LightLineFugitive()
   if exists("*fugitive#head")
     let branch = fugitive#head()
-    return branch !=# '' ? ' '.branch : ''
+    return expand('%:t') =~ 'NERD_tree' ? '' :
+          \ branch !=# '' ? ' '.branch : ''
   endif
   return ''
 endfunction
