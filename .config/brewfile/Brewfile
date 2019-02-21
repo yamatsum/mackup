@@ -15,6 +15,7 @@ brew gawk
 brew gdbm
 brew gettext
 brew ghq
+brew gibo
 brew gmp
 brew icu4c
 brew jemalloc
