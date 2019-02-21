@@ -1,5 +1,5 @@
 "---------------------------------------------------------------------------
-" Yasu's .vimrc
+" Yamatsum's init.vim
 "---------------------------------------------------------------------------
 
 "---------------------------------------------------------------------------
@@ -7,9 +7,10 @@
 "
 
 " 文字コード
-set encoding=utf-8
+" set encoding=utf-8
+
 " rcのエンコーディング
-scriptencoding utf-8
+" scriptencoding utf-8
 
 "---------------------------------------------------------------------------
 " Plugin:
@@ -21,12 +22,10 @@ let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv roo
 " let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
 " let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
 
-" Install plugins using vim-plug {
-  let plugfile = $NVIM_ROOT.'/plugs.vim'
-  if filereadable(plugfile)
-    exec 'source' plugfile
-  endif
-" }
+let plugfile = $NVIM_ROOT.'/plugs.vim'
+if filereadable(plugfile)
+  exec 'source' plugfile
+endif
 
 "---------------------------------------------------------------------------
 " Initialize:
@@ -34,7 +33,7 @@ let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv roo
 
 syntax on
 
-filetype plugin indent on
+" filetype plugin indent on
 
 "---------------------------------------------------------------------------
 " Search:
@@ -82,15 +81,14 @@ set noswapfile
 "
 
 " 256色
-set t_Co=256
+" Note: Neovim ignores t_Co and other terminal codes.
+" set t_Co=256
 
 " 背景色
-set background=dark
+" set background=dark
 
 " truecolor
-if (has("termguicolors"))
-  set termguicolors
-endif
+set termguicolors
 
 " 起動時メッセージを表示しない
 set shortmess& shortmess+=I
@@ -141,7 +139,7 @@ highlight Whitespace guifg=#424551
 highlight ExtraWhitespace ctermfg=blue guifg=#61afef
 
 " ステータスラインを常時表示
-set laststatus=2
+" set laststatus=2
 
 " デフォルトのモードステータスの非表示
 set noshowmode
@@ -198,22 +196,23 @@ let &colorcolumn="80,".join(range(120,999),",")
 set formatoptions=q
 
 " iTerm2でtmuxを使っている時にインサートモードでのカーソルの形状をかえる
-if $TERM_PROGRAM =~ "iTerm"
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-endif
+" The Vim terminal options t_SI and t_EI are ignored, like all other t_XX options.
+" if $TERM_PROGRAM =~ "iTerm"
+"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" endif
 
 " 背景半透明
-if !has('gui_running')
-    augroup seiya
-        autocmd!
-        autocmd VimEnter,ColorScheme * highlight Normal guibg=none
-        autocmd VimEnter,ColorScheme * highlight LineNr guibg=none
-        autocmd VimEnter,ColorScheme * highlight SignColumn guibg=none
-        autocmd VimEnter,ColorScheme * highlight VertSplit guibg=none
-        autocmd VimEnter,ColorScheme * highlight NonText guibg=none
-    augroup END
-endif
+" if !has('gui_running')
+"     augroup seiya
+"         autocmd!
+"         autocmd VimEnter,ColorScheme * highlight Normal guibg=none
+"         autocmd VimEnter,ColorScheme * highlight LineNr guibg=none
+"         autocmd VimEnter,ColorScheme * highlight SignColumn guibg=none
+"         autocmd VimEnter,ColorScheme * highlight VertSplit guibg=none
+"         autocmd VimEnter,ColorScheme * highlight NonText guibg=none
+"     augroup END
+" endif
 
 hi TabLine guibg=#21252B
 
@@ -224,6 +223,7 @@ hi TabLine guibg=#21252B
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
 " autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 
@@ -271,6 +271,9 @@ nnoremap <leader>] :silent !open -a Google\ Chrome %<CR>
 " reload init.vim (can't do undo)
 nnoremap <leader>r :source $MYVIMRC<CR>
 
+" open init.vim
+map <leader>v :e $NVIM_ROOT/init.vim<CR>
+
 " turn off paste mode
 " set pastetoggle=<C-j>
 
@@ -282,9 +285,9 @@ nnoremap <leader>r :source $MYVIMRC<CR>
 " set backspace=indent,eol,start
 
 " matchit.vimの有効化
-if !exists('g:loaded_matchit')
-  runtime macros/matchit.vim
-endif
+" if !exists('g:loaded_matchit')
+"   runtime macros/matchit.vim
+" endif
 
 command! -nargs=? Jq call s:Jq(<f-args>)
 function! s:Jq(...)
@@ -323,6 +326,7 @@ set mouse=a
 
 " プリント時の行番号の表示、余白
 set printoptions=number:y,left:5pc
+
 " プリント時のフォント
 set printfont=Ricty\ for\ Powerline\ 12
 
@@ -330,11 +334,8 @@ set printfont=Ricty\ for\ Powerline\ 12
 " Plugin Setting:
 "
 
-" Source remaining config scripts {
-  let configdir = $NVIM_ROOT.'/config'
+let configdir = $NVIM_ROOT.'/config'
 
-  for fpath in split(globpath(configdir, '*.vim'), '\n')
-    exe 'source' fpath
-  endfor
-" }
-
+for fpath in split(globpath(configdir, '*.vim'), '\n')
+  exe 'source' fpath
+endfor
