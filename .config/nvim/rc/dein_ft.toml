@@ -192,8 +192,14 @@ on_ft = 'javascript'
 # Vim bundle for http://styled-components.com based javascript files.
 [[plugins]]
 repo = 'styled-components/vim-styled-components'
+# repo = 'tomaskallup/vim-styled-components'
 on_ft = ['javascript.jsx', 'typescript.tsx']
 rev = 'main'
+
+# A Vim plugin that provides GraphQL file detection, syntax highlighting, and indentation.
+[[plugins]]
+repo = 'jparise/vim-graphql'
+on_ft = ['javascript.jsx', 'typescript.tsx']
 
 #---------------------------------------------------------------------------
 # Typescript:
