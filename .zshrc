@@ -1,8 +1,3 @@
-# Set iTerm2 titlebar color(It works only with Sierra. It does not work in High Sierra)
-echo -e "\033]6;1;bg;red;brightness;40\a"
-echo -e "\033]6;1;bg;green;brightness;44\a"
-echo -e "\033]6;1;bg;blue;brightness;52\a"
-
 for file in ~/.zsh/*.zsh; do
   source $file
 done
