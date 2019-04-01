@@ -18,6 +18,10 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'w0rp/ale'
 
+# ALE indicator for the lightline vim plugin
+[[plugins]]
+repo = 'maximbaz/lightline-ale'
+
 # Insert several candidates with a single key
 [[plugins]]
 repo = 'kana/vim-smartchr'
@@ -75,6 +79,14 @@ repo = 'junegunn/goyo.vim'
 # A Git wrapper so awesome, it should be illegal
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# Changes Vim working directory to project root (identified by presence of known directory or file).
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+# A Vim plugin for indent-level based motion.
+[[plugins]]
+repo = 'jeetsukumaran/vim-indentwise'
 
 #---------------------------------------------------------------------------
 # Test:

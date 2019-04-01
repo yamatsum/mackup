@@ -15,14 +15,12 @@ let g:ale_sign_warning = '' "●
 highlight ALEWarningSign guifg=#e5c07b
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_statusline_format = [' %d', ' %d', '']
+" let g:ale_statusline_format = [' %d', ' %d', '']
 let g:ale_echo_msg_error_str = 'E' " E 
 let g:ale_echo_msg_warning_str = 'W' " W 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
 let g:ale_virtualtext_cursor = 1
 let g:ale_virtualtext_prefix = ' ' "
 highlight ALEVirtualTextError guifg=#e06c75
 highlight ALEVirtualTextWarning guifg=#e5c07b
-
-" highlight ALEErrorSign guibg=none guifg=#f43753
-" highlight ALEWarningSign guibg=none guifg=#ffc24b
