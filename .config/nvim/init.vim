@@ -16,11 +16,10 @@
 " Plugin:
 "
 
-" python(pyenv) resolve (help :CheckHealth)
-let g:python_host_prog = ''
+" PROVIDER CONFIGURATION
+let g:loaded_python_provider = 1
 let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
-" let g:python_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python2)/bin/python") || echo -n $(which python2)')
-" let g:python3_host_prog = system('(type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(pyenv global | grep python3)/bin/python") || echo -n $(which python3)')
+let g:node_host_prog = system('type nodenv &>/dev/null && echo -n "$(nodenv root)/versions/$(cat $(nodenv root)/version | head -n 1)/bin/neovim-node-host" || echo -n $(which node)')
 
 let plugfile = $NVIM_ROOT.'/plugs.vim'
 if filereadable(plugfile)
@@ -80,13 +79,6 @@ set noswapfile
 " View:
 "
 
-" 256色
-" Note: Neovim ignores t_Co and other terminal codes.
-" set t_Co=256
-
-" 背景色
-" set background=dark
-
 " truecolor
 set termguicolors
 
@@ -129,17 +121,10 @@ set tabstop=2
 " 自動インデントの際に用いられる各ステップの幅"
 set shiftwidth=2
 
-" set autoindent
-
-" set smartindent
-
 highlight Whitespace guifg=#424551
 
 " 余分な空白の色
 highlight ExtraWhitespace ctermfg=blue guifg=#61afef
-
-" ステータスラインを常時表示
-" set laststatus=2
 
 " デフォルトのモードステータスの非表示
 set noshowmode
@@ -181,11 +166,6 @@ augroup END
 
 " ウィンドウの境界線の設定
 set fillchars=vert:\ ,eob:\ 
-" hi! VertSplit ctermfg=235 ctermbg=235 term=NONE guifg=black
-
-" 初期起動時の空行のチルダや改行文字の設定(NonText:eol,extends,precedes)
-" hi! NonText ctermfg=234 ctermbg=234 term=NONE guifg=#282c34
-" hi! EndOfBuffer gui=none guifg=#282c34 guibg=none
 
 " Wrap Guide(80:warning, 120:danger)
 set textwidth=80
@@ -194,25 +174,6 @@ let &colorcolumn="80,".join(range(120,999),",")
 
 " 自動改行OFF
 set formatoptions=q
-
-" iTerm2でtmuxを使っている時にインサートモードでのカーソルの形状をかえる
-" The Vim terminal options t_SI and t_EI are ignored, like all other t_XX options.
-" if $TERM_PROGRAM =~ "iTerm"
-"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-" endif
-
-" 背景半透明
-" if !has('gui_running')
-"     augroup seiya
-"         autocmd!
-"         autocmd VimEnter,ColorScheme * highlight Normal guibg=none
-"         autocmd VimEnter,ColorScheme * highlight LineNr guibg=none
-"         autocmd VimEnter,ColorScheme * highlight SignColumn guibg=none
-"         autocmd VimEnter,ColorScheme * highlight VertSplit guibg=none
-"         autocmd VimEnter,ColorScheme * highlight NonText guibg=none
-"     augroup END
-" endif
 
 hi TabLine guibg=#21252B
 
@@ -306,6 +267,8 @@ endfunction
 " インサートから抜けるときにペーストモードを解除
 autocmd InsertLeave * set nopaste
 
+command! VimShowHlItem echo synIDattr(synID(line("."), col("."), 1), "name")
+
 "---------------------------------------------------------------------------
 " Fold:
 "
@@ -323,12 +286,6 @@ set mouse=a
 "---------------------------------------------------------------------------
 " Others:
 "
-
-" プリント時の行番号の表示、余白
-set printoptions=number:y,left:5pc
-
-" プリント時のフォント
-set printfont=Ricty\ for\ Powerline\ 12
 
 "---------------------------------------------------------------------------
 " Plugin Setting:

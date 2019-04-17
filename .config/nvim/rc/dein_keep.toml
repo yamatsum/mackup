@@ -11,6 +11,10 @@
 # [[plugins]]
 # repo = 'blueyed/vim-diminactive'
 
+# Distraction-free writing in Vim
+# [[plugins]]
+# repo = 'junegunn/goyo.vim'
+
 # Plugin to toggle, display and navigate marks
 [[plugins]]
 repo = 'kshenoy/vim-signature'

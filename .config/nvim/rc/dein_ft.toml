@@ -64,11 +64,12 @@ on_ft = 'php'
 # on_ft = 'go'
 
 # Asynchronous Go completion for Neovim. deoplete source for Go.
-[[plugins]]
-repo = 'zchee/deoplete-go'
-build = 'make'
-on_ft = 'go'
-depends = ['deoplete.nvim']
+# [[plugins]]
+# repo = 'zchee/deoplete-go'
+# build = 'make'
+# on_ft = 'go'
+# on_event = 'InsertEnter'
+# depends = ['deoplete.nvim']
 
 #---------------------------------------------------------------------------
 # Java:

@@ -2,6 +2,18 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
+on_ft = 'go' # experimental
+
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# build = 'bash install.sh'
+# rev = 'next'
+# on_ft = 'go' # experimental
+
 # File-type sensible comments
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -21,11 +33,6 @@ repo = 'w0rp/ale'
 # ALE indicator for the lightline vim plugin
 [[plugins]]
 repo = 'maximbaz/lightline-ale'
-
-# Insert several candidates with a single key
-[[plugins]]
-repo = 'kana/vim-smartchr'
-on_i = 1
 
 # Open URI with your favorite browser
 [[plugins]]
@@ -71,10 +78,6 @@ repo = '/usr/local/opt/fzf'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-
-# Distraction-free writing in Vim
-[[plugins]]
-repo = 'junegunn/goyo.vim'
 
 # A Git wrapper so awesome, it should be illegal
 [[plugins]]

@@ -20,9 +20,12 @@ if [ ${key} = 'The agent has no identities.' ] && [ -e ~/.ssh/id_rsa ]; then
   ssh-add -K ~/.ssh/id_rsa
 fi
 
+export GOENV_DISABLE_GOPATH=1
 export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 eval "$(anyenv init -)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
