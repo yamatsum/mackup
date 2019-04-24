@@ -129,41 +129,6 @@ highlight ExtraWhitespace ctermfg=blue guifg=#61afef
 " デフォルトのモードステータスの非表示
 set noshowmode
 
-" 必要なときだけカーソルラインを表示
-hi clear CursorLine
-augroup vimrc-auto-cursorline
-  autocmd!
-  autocmd CursorMoved,CursorMovedI * call s:auto_cursorline('CursorMoved')
-  autocmd CursorHold,CursorHoldI * call s:auto_cursorline('CursorHold')
-  autocmd WinEnter * call s:auto_cursorline('WinEnter')
-  autocmd WinLeave * call s:auto_cursorline('WinLeave')
-  setlocal cursorline
-  hi clear CursorLine
-  let s:cursorline_lock = 0
-  function! s:auto_cursorline(event)
-    if a:event ==# 'WinEnter'
-      setlocal cursorline
-      hi CursorLine term=underline cterm=underline guibg=#2C313C
-      let s:cursorline_lock = 2
-    elseif a:event ==# 'WinLeave'
-      setlocal nocursorline
-      hi clear CursorLine
-    elseif a:event ==# 'CursorMoved'
-      if s:cursorline_lock
-        if 1 < s:cursorline_lock
-          let s:cursorline_lock = 1
-        else
-          hi clear CursorLine
-          let s:cursorline_lock = 0
-        endif
-      endif
-    elseif a:event ==# 'CursorHold'
-      hi CursorLine term=underline cterm=underline guibg=#2C313C
-      let s:cursorline_lock = 1
-    endif
-  endfunction
-augroup END
-
 " ウィンドウの境界線の設定
 set fillchars=vert:\ ,eob:\ 
 

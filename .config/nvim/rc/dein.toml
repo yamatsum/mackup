@@ -3,10 +3,10 @@
 repo = 'Shougo/dein.vim'
 
 # Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
-on_ft = 'go' # experimental
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# build = './install.sh nightly'
+# on_ft = 'go' # experimental
 
 # [[plugins]]
 # repo = 'autozimu/LanguageClient-neovim'
@@ -21,6 +21,7 @@ repo = 'tomtom/tcomment_vim'
 # Handles bracketed-paste-mode
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
+on_event = 'InsertEnter'
 
 # Delete/change/add parentheses/quotes/XML-tags/much more with ease
 [[plugins]]
@@ -62,10 +63,6 @@ repo = 'TaDaa/vimade'
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
-# Underlines the word under the cursor
-[[plugins]]
-repo = 'itchyny/vim-cursorword'
-
 # Vim motions on speed!
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -90,6 +87,14 @@ repo = 'airblade/vim-rooter'
 # A Vim plugin for indent-level based motion.
 [[plugins]]
 repo = 'jeetsukumaran/vim-indentwise'
+
+# Show / hide cursorline automatically
+[[plugins]]
+repo = 'yamatsum/vim-auto-cursorline'
+
+# Underlines the word under the cursor
+[[plugins]]
+repo = 'yamatsum/vim-cursorword'
 
 #---------------------------------------------------------------------------
 # Test:
