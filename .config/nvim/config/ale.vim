@@ -1,13 +1,13 @@
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
-      \ 'go': ['gometalinter'],
+      \ 'go': ['golangci-lint'],
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['prettier'],
       \ 'go': ['gofmt', 'goimports'],
       \ }
-let g:ale_go_gometalinter_options = '--fast --enable=golint'
+
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '' "●
