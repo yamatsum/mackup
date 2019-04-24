@@ -7,6 +7,7 @@ tap dart-lang/dart
 brew ag
 brew anyenv
 brew autoconf
+brew boost
 brew brew-file
 brew exa
 brew fribidi
@@ -64,11 +65,13 @@ cask kindle
 cask liteicon
 cask marshallofsound-google-play-music-player
 cask notion
+cask postman
 cask react-native-debugger
 cask sip
 cask skitch
 cask slack
 cask sourcetree
+cask tableplus
 cask termhere
 cask vanilla
 cask visual-studio-code
