@@ -86,7 +86,6 @@ set termguicolors
 set shortmess& shortmess+=I
 
 " カラースキーマ
-" (tender, atom-dark-256, material-theme, OceanicNext)
 colorscheme onedark
 
 " 絶対行番号表示
