@@ -31,6 +31,7 @@ brew mackup
 brew mas
 brew mpfr
 brew msgpack
+brew mysql
 brew ncurses
 brew neovim
 brew oniguruma
