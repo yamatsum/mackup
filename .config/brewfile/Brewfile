@@ -57,6 +57,7 @@ cask 1password
 cask alfred
 cask dash
 cask google-chrome
+cask google-cloud-sdk
 cask google-japanese-ime
 cask hyperswitch
 cask iterm2
@@ -66,6 +67,7 @@ cask kindle
 cask liteicon
 cask marshallofsound-google-play-music-player
 cask notion
+cask openinterminal
 cask postman
 cask react-native-debugger
 cask sip
