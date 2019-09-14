@@ -12,6 +12,9 @@
 " rcのエンコーディング
 " scriptencoding utf-8
 
+" https://github.com/neovim/neovim/issues/5683
+lang en_US.UTF-8
+
 "---------------------------------------------------------------------------
 " Plugin:
 "
@@ -100,9 +103,11 @@ set splitright
 " ウィンドウ画面分割を下に
 set splitbelow
 
+set noshowcmd
+
 "不可視文字の文字の可視化
 set list
-" set listchars=tab:▸»-,trail:˽·_,eol:¬,extends:»,precedes:«,nbsp:%
+" set listchars=trail:˽·_,eol:¬
 set listchars=tab:\│\ ,trail:·,eol:\ ,extends:»,precedes:«
 
 " 特殊記号の2byte割当
@@ -141,14 +146,25 @@ set formatoptions=q
 
 hi TabLine guibg=#21252B
 
+set wildoptions=pum
+
+set pumblend=20
+
+" hi Floating guibg=#000000 guifg=#000000
+" hi NomalFloat guibg=#000000 guifg=#000000
+" hi CocFloating guibg=#000000 guifg=#000000
+" hi CocPumFloating guibg=#000000 guifg=#000000
+" hi CocPumFloatingDetail guibg=#000000 guifg=#000000
+" hi CocInfoFloat guibg=#000000 guifg=#000000
+" hi CocHintFloat guibg=#000000 guifg=#000000
+
+set signcolumn=yes
+
 "---------------------------------------------------------------------------
 " FileType:
 "
 
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
-
-" autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
-" autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 
@@ -206,9 +222,6 @@ map <leader>v :e $NVIM_ROOT/init.vim<CR>
 " Commands:
 "
 
-" delete が効かないときの設定
-" set backspace=indent,eol,start
-
 " matchit.vimの有効化
 " if !exists('g:loaded_matchit')
 "   runtime macros/matchit.vim
@@ -250,6 +263,29 @@ set mouse=a
 "---------------------------------------------------------------------------
 " Others:
 "
+
+function! ProfileCursorMove() abort
+  let profile_file = expand('~/.log/vim-profile.log')
+  if filereadable(profile_file)
+    call delete(profile_file)
+  endif
+
+  normal! gg
+  normal! zR
+
+  execute 'profile start ' . profile_file
+  profile func *
+  profile file *
+
+  augroup ProfileCursorMove
+    autocmd!
+    autocmd CursorHold <buffer> profile pause | q
+  augroup END
+
+  for i in range(100)
+    call feedkeys('j')
+  endfor
+endfunction
 
 "---------------------------------------------------------------------------
 " Plugin Setting:
