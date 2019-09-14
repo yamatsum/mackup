@@ -3,16 +3,9 @@
 repo = 'Shougo/dein.vim'
 
 # Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-# [[plugins]]
-# repo = 'neoclide/coc.nvim'
-# build = './install.sh nightly'
-# on_ft = 'go' # experimental
-
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# build = 'bash install.sh'
-# rev = 'next'
-# on_ft = 'go' # experimental
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
 
 # File-type sensible comments
 [[plugins]]
@@ -39,25 +32,13 @@ repo = 'maximbaz/lightline-ale'
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-# Search Dash.app [\d]
+# Easy and high speed coding method
 [[plugins]]
-repo = 'rizzatti/dash.vim'
-
-# Simple templates plugin
-[[plugins]]
-repo = 'aperezdc/vim-template'
-
-# search status
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
+repo = 'mattn/sonictemplate-vim'
 
 # responsive tabline
 [[plugins]]
 repo = 'yami-beta/vim-responsive-tabline'
-
-# An eye friendly plugin that fades your inactive buffers and preserves your syntax highlighting!
-[[plugins]]
-repo = 'TaDaa/vimade'
 
 # Insert or delete brackets, parens, quotes in pair
 [[plugins]]
@@ -77,12 +58,8 @@ repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
 # A Git wrapper so awesome, it should be illegal
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-# Changes Vim working directory to project root (identified by presence of known directory or file).
-[[plugins]]
-repo = 'airblade/vim-rooter'
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
 
 # A Vim plugin for indent-level based motion.
 [[plugins]]
@@ -97,45 +74,16 @@ repo = 'yamatsum/vim-auto-cursorline'
 repo = 'yamatsum/vim-cursorword'
 
 #---------------------------------------------------------------------------
-# Test:
-#
-
-# asynchronous build and test dispatcher
-# [[plugins]]
-# repo = 'tpope/vim-dispatch'
-
-# Run your tests at the speed of thought
-# [[plugins]]
-# repo = 'janko-m/vim-test'
-# depends = ['vim-dispatch']
-
-#---------------------------------------------------------------------------
-# Nerdtree:
-#
-
-# A tree explorer
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-# NERDTree and tabs together
-[[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
-
-# Extra syntax and highlight for nerdtree files
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-# A plugin of NERDTree showing git status
-# [[plugins]]
-# repo = 'Xuyuanp/nerdtree-git-plugin'
-
-#---------------------------------------------------------------------------
 # View:
 #
 
 # A light and configurable statusline
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+
+# Provides the branch name of the current git repository
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
 
 # Displaying the indention levels with thin vertical lines
 [[plugins]]
@@ -160,11 +108,3 @@ repo = 'airblade/vim-gitgutter'
 # A dark Vim/Neovim color scheme inspired by Atom's One Dark syntax theme.
 [[plugins]]
 repo = 'joshdick/onedark.vim'
-
-# Adaptation of one-light and one-dark colorschemes for Vim
-[[plugins]]
-repo = 'rakr/vim-one'
-
-# A 24bit colorscheme for Vim, Airline and Lightline
-[[plugins]]
-repo = 'jacoborus/tender'

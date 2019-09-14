@@ -1,19 +1,27 @@
 # Dark powered asynchronous unite all interfaces for neovim
-# [[plugins]]
-# repo = 'Shougo/denite.nvim'
-# if = 'has("nvim")'
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+if = 'has("nvim")'
+
+# Simple templates plugin
+[[plugins]]
+repo = 'aperezdc/vim-template'
 
 # Run commands quickly.
-# [[plugins]]
-# repo = 'thinca/vim-quickrun'
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# search status
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
 
 # Vim plugin to dim inactive windows
-# [[plugins]]
-# repo = 'blueyed/vim-diminactive'
+[[plugins]]
+repo = 'blueyed/vim-diminactive'
 
 # Distraction-free writing in Vim
-# [[plugins]]
-# repo = 'junegunn/goyo.vim'
+[[plugins]]
+repo = 'junegunn/goyo.vim'
 
 # Plugin to toggle, display and navigate marks
 [[plugins]]
@@ -36,24 +44,45 @@ repo = 'yuttie/comfortable-motion.vim'
 repo = 'majutsushi/tagbar'
 
 # edit evernote on vim.
-# [[plugins]]
-# repo = 'kakkyz81/evervim'
+[[plugins]]
+repo = 'kakkyz81/evervim'
 
 # Changes the splash of Vim as you like.
-# [[plugins]]
-# repo = 'thinca/vim-splash'
+[[plugins]]
+repo = 'thinca/vim-splash'
 
 # The interactive scratchpad for hackers.
-# [[plugins]]
-# repo = 'metakirby5/codi.vim'
+[[plugins]]
+repo = 'metakirby5/codi.vim'
 
 # A simple task and time manager for vim.
-# [[plugins]]
-# repo = 'soywod/kronos.vim'
+[[plugins]]
+repo = 'soywod/kronos.vim'
 
 # Show / hide cursorline automatically
 [[plugins]]
 repo = 'delphinus/vim-auto-cursorline'
+
+# Search Dash.app [\d]
+[[plugins]]
+repo = 'rizzatti/dash.vim'
+
+# A plugin of NERDTree showing git status
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
+#---------------------------------------------------------------------------
+# Test:
+#
+
+# asynchronous build and test dispatcher
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+# Run your tests at the speed of thought
+[[plugins]]
+repo = 'janko-m/vim-test'
+depends = ['vim-dispatch']
 
 #---------------------------------------------------------------------------
 # ColorScheme:
@@ -83,3 +112,6 @@ repo = 'mhartington/oceanic-next'
 [[plugins]]
 repo = 'jacoborus/tender'
 
+# Adaptation of one-light and one-dark colorschemes for Vim
+[[plugins]]
+repo = 'rakr/vim-one'
