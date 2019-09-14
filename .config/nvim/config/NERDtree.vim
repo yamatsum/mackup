@@ -13,6 +13,8 @@ let NERDTreeWinSize=26
 let g:nerdtree_tabs_smart_startup_focus=1
 " 新規タブを開いた時にもNERDTreeを表示する
 let g:nerdtree_tabs_open_on_new_tab=1
+
+let g:NERDTreeChDirMode=2
 " <C-e>でNERDTreeをオンオフ
 " nmap <silent> <C-e>      :NERDTreeToggle<CR>
 " vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
