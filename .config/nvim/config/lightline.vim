@@ -7,7 +7,7 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'filename', 'lineinfo', 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
-      \   'right': [ [ 'fileencoding', 'filetype', 'fugitive' ] ]
+      \   'right': [ [ 'fileencoding', 'filetype', 'gitbranch' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ [ 'filename' ] ],
@@ -18,14 +18,14 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'mode': 'LightLineMode',
-      \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \   'fileencoding': 'LightlineFileencoding',
-      \   'ale': 'ALEGetStatusLine'
+      \   'ale': 'ALEGetStatusLine',
+      \   'gitbranch': 'GitBranch'
       \ },
       \ 'component_expand': {
       \   'lineinfo': 'LightLineLineinfo',
@@ -87,9 +87,13 @@ function! LightLineReadonly()
   endif
 endfunction
 " ファイルのGitの状態
-function! LightLineFugitive()
+function! GitBranch()
   if exists("*fugitive#head")
     let branch = fugitive#head()
+    return expand('%:t') =~ 'NERD_tree' ? '' :
+          \ branch !=# '' ? ' '.branch : ''
+  elseif exists("*gitbranch#name")
+    let branch = gitbranch#name()
     return expand('%:t') =~ 'NERD_tree' ? '' :
           \ branch !=# '' ? ' '.branch : ''
   endif
@@ -97,8 +101,12 @@ function! LightLineFugitive()
 endfunction
 " ファイル名
 function! LightLineFilename()
+  " let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let root = fnamemodify(get(b:, 'gitbranch_path'), ':h:h')
+  let path = expand('%:p')
+
   return expand('%:t') =~ 'NERD_tree' ? '' :
         \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != expand('%:t') ? expand('%:t') : 'untitled') .
+        \ ('' != expand('%:t') ? (path[:len(root)-1] ==# root ? path[len(root)+1:] : expand('%:t')) : 'untitled') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
