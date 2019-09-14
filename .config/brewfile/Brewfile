@@ -7,6 +7,7 @@ tap dart-lang/dart
 brew ag
 brew anyenv
 brew autoconf
+brew bat
 brew boost
 brew brew-file
 brew exa
