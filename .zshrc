@@ -29,3 +29,7 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 eval "$(anyenv init -)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
+export CLOUDSDK_PYTHON="$HOME/.anyenv/envs/pyenv/versions/2.7.14/bin/python"
+

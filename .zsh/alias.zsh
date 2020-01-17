@@ -5,6 +5,7 @@ alias ls='exa'
 alias la='exa --all'
 alias ll='exa --long'
 alias lla='exa --all --long'
+alias cat='bat --style=plain --theme=OneHalfDark'
 alias zshconfig='vi ~/.zshrc'
 alias tmuxconfig='vi ~/.tmux.conf'
 alias viconfig='vi ~/.config/nvim/init.vim'
@@ -27,3 +28,4 @@ alias dsp="d system prune"
 alias dl="d pull"
 alias k='kubectl'
 alias kc='kubectx'
+alias knife='chef exec knife'

@@ -8,7 +8,7 @@ cd (){ builtin cd "$@" && ls }
 ## linuxbrew
 PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 ## anyenv
-eval "$(anyenv init -)"
+# eval "$(anyenv init -)"
 
 ## Alias:
 # neovim
@@ -45,15 +45,15 @@ alias dsp="d system prune"
 alias dl="d pull"
 # docker-compose alias
 alias dc="sudo docker-compose"
-alias k='kubectl'
+# alias k='kubectl'
 
 ## Kubernetes
-export MINIKUBE_WANTUPDATENOTIFICATION=false
-export MINIKUBE_WANTREPORTERRORPROMPT=false
-export MINIKUBE_HOME=$HOME
-export CHANGE_MINIKUBE_NONE_USER=true
-export KUBECONFIG=$HOME/.kube/config
-source <(kubectl completion bash)
+# export MINIKUBE_WANTUPDATENOTIFICATION=false
+# export MINIKUBE_WANTREPORTERRORPROMPT=false
+# export MINIKUBE_HOME=$HOME
+# export CHANGE_MINIKUBE_NONE_USER=true
+# export KUBECONFIG=$HOME/.kube/config
+# source <(kubectl completion bash)
 
 ## golang
 export GOENV_ROOT=$HOME/.goenv

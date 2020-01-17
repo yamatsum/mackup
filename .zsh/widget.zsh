@@ -25,7 +25,7 @@ function ssh-fzf () {
   # local selected_host=$(grep "Host " ~/.ssh/config | grep -v '*' | cut -b 6- | fzf-tmux --query "$LBUFFER" )
   local selected_host="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(find $HOME/.ssh/conf.d -type f 2>/dev/null) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf-tmux)"
   if [ -n "$selected_host" ]; then
-    BUFFER="ssh ${selected_host}"
+    BUFFER="sshrc ${selected_host}"
     zle accept-line
   fi
   zle reset-prompt
@@ -44,4 +44,13 @@ function tree-fzf() {
 zle -N tree-fzf
 bindkey "^T" tree-fzf
 
-export FZF_DEFAULT_OPTS='--reverse'
+export FZF_DEFAULT_OPTS='
+  --reverse
+'
+  # --color fg:#cccdd0,hl:#f9f9f9
+
+function groot() {
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    cd `pwd`/`git rev-parse --show-cdup`
+  fi
+}
