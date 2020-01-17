@@ -1,21 +1,3 @@
-# Snippet support
-[[plugins]]
-repo = 'Shougo/neosnippet'
-depends = ['neosnippet-snippets']
-on_event = 'InsertEnter'
-on_ft = ['snippet']
-
-# The standard snippets repository for neosnippet
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_event = 'InsertEnter'
-
-# Dark powered asynchronous completion framework for neovim/Vim8
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# depends = 'context_filetype.vim'
-# on_event = 'InsertEnter'
-
 # Insert several candidates with a single key
 [[plugins]]
 repo = 'kana/vim-smartchr'

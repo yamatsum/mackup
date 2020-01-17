@@ -12,15 +12,14 @@ on_ft = 'html'
 repo = 'hail2u/vim-css3-syntax'
 # on_ft = 'css'
 
-# Preview colours in source code
+# THE FASTEST NEOVIM COLORIZER
 [[plugins]]
-repo = 'ap/vim-css-color'
-# on_ft = 'css'
+repo = 'norcalli/nvim-colorizer.lua'
 
 # emmet for vim
 [[plugins]]
 repo = 'mattn/emmet-vim'
-# on_ft = ['html', 'css', 'javascript', 'php']
+on_ft = ['html', 'css', 'javascript', 'typescript', 'php']
 
 # Auto close (X)HTML tags
 [[plugins]]
@@ -44,12 +43,6 @@ repo = "Shougo/context_filetype.vim"
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'javascript.jsx']
-
-# A semantic javascript syntax highlighter (uses babylon) for Neovim
-# [[plugins]]
-# repo = 'billyvg/tigris.nvim'
-# on_ft = ['javascript', 'javascript.jsx']
-# build = './install.sh'
 
 # React JSX syntax pretty highlighting for vim.
 # [[plugins]]
@@ -81,22 +74,10 @@ on_ft = ['javascript', 'javascript.jsx']
 # repo = 'gavocanov/vim-js-indent'
 # on_ft = ['javascript', 'javascript.jsx']
 
-# Tern plugin for Vim
-[[plugins]]
-repo = 'marijnh/tern_for_vim'
-on_ft = ['javascript', 'javascript.jsx']
-build = 'npm install'
-
-# deoplete.nvim source for javascript
-[[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_ft = ['javascript', 'javascript.jsx']
-build = 'npm install -g tern'
-
 # Syntax Highligth for Vue.js components
 [[plugins]]
 repo = 'posva/vim-vue'
-on_ft = ['javascript', 'vue']
+on_ft = ['vue']
 
 # Generate JSDoc to your JavaScript code.
 [[plugins]]
@@ -179,6 +160,15 @@ on_ft = ['dart']
 [[plugins]]
 repo = 'chase/vim-ansible-yaml'
 on_ft = 'ansible'
+
+#---------------------------------------------------------------------------
+# Config:
+#
+
+# Improved nginx vim plugin (incl. syntax highlighting)
+[[plugins]]
+repo = 'chr4/nginx.vim'
+on_ft = 'nginx'
 
 #---------------------------------------------------------------------------
 # Markdown:

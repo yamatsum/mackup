@@ -3,6 +3,30 @@
 repo = 'Shougo/denite.nvim'
 if = 'has("nvim")'
 
+# Dark powered asynchronous completion framework for neovim/Vim8
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_event = 'InsertEnter'
+
+# Snippet support
+[[plugins]]
+repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
+on_event = 'InsertEnter'
+on_ft = ['snippet']
+
+# The standard snippets repository for neosnippet
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_event = 'InsertEnter'
+
+# https://github.com/neovim/neovim/issues/937
+# Handles bracketed-paste-mode
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+on_event = 'InsertEnter'
+
 # Simple templates plugin
 [[plugins]]
 repo = 'aperezdc/vim-template'
@@ -70,6 +94,29 @@ repo = 'rizzatti/dash.vim'
 # A plugin of NERDTree showing git status
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
+
+# Preview colours in source code
+[[plugins]]
+repo = 'ap/vim-css-color'
+# on_ft = 'css'
+
+# Tern plugin for Vim
+[[plugins]]
+repo = 'marijnh/tern_for_vim'
+on_ft = ['javascript', 'javascript.jsx']
+build = 'npm install'
+
+# deoplete.nvim source for javascript
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = ['javascript', 'javascript.jsx']
+build = 'npm install -g tern'
+
+# A semantic javascript syntax highlighter (uses babylon) for Neovim
+[[plugins]]
+repo = 'billyvg/tigris.nvim'
+on_ft = ['javascript', 'javascript.jsx']
+build = './install.sh'
 
 #---------------------------------------------------------------------------
 # Test:

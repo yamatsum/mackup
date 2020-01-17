@@ -5,16 +5,12 @@ repo = 'Shougo/dein.vim'
 # Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
+rev = 'release'
+merged = 0
 
 # File-type sensible comments
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-
-# Handles bracketed-paste-mode
-[[plugins]]
-repo = 'ConradIrwin/vim-bracketed-paste'
-on_event = 'InsertEnter'
 
 # Delete/change/add parentheses/quotes/XML-tags/much more with ease
 [[plugins]]
