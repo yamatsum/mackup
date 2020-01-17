@@ -6,12 +6,6 @@
 " Encoding:
 "
 
-" 文字コード
-" set encoding=utf-8
-
-" rcのエンコーディング
-" scriptencoding utf-8
-
 " https://github.com/neovim/neovim/issues/5683
 lang en_US.UTF-8
 
@@ -20,7 +14,7 @@ lang en_US.UTF-8
 "
 
 " PROVIDER CONFIGURATION
-let g:loaded_python_provider = 1
+let g:loaded_python_provider = 0
 let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
 let g:node_host_prog = system('type nodenv &>/dev/null && echo -n "$(nodenv root)/versions/$(cat $(nodenv root)/version | head -n 1)/bin/neovim-node-host" || echo -n $(which node)')
 
@@ -35,17 +29,9 @@ endif
 
 syntax on
 
-" filetype plugin indent on
-
 "---------------------------------------------------------------------------
 " Search:
 "
-
-" 選択箇所をハイライト"
-" set hlsearch
-
-" インクリメンタルサーチを行う
-" set incsearch
 
 " 大文字小文字を区別しない
 set ignorecase
@@ -146,17 +132,7 @@ set formatoptions=q
 
 hi TabLine guibg=#21252B
 
-set wildoptions=pum
-
 set pumblend=20
-
-" hi Floating guibg=#000000 guifg=#000000
-" hi NomalFloat guibg=#000000 guifg=#000000
-" hi CocFloating guibg=#000000 guifg=#000000
-" hi CocPumFloating guibg=#000000 guifg=#000000
-" hi CocPumFloatingDetail guibg=#000000 guifg=#000000
-" hi CocInfoFloat guibg=#000000 guifg=#000000
-" hi CocHintFloat guibg=#000000 guifg=#000000
 
 set signcolumn=yes
 
@@ -166,7 +142,7 @@ set signcolumn=yes
 
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
 
-autocmd BufNewFile,BufRead Berksfile set filetype=ruby
+autocmd BufRead,BufNewFile Berksfile set filetype=ruby
 
 "---------------------------------------------------------------------------
 " Mappings:
@@ -215,9 +191,6 @@ nnoremap <leader>r :source $MYVIMRC<CR>
 " open init.vim
 map <leader>v :e $NVIM_ROOT/init.vim<CR>
 
-" turn off paste mode
-" set pastetoggle=<C-j>
-
 "---------------------------------------------------------------------------
 " Commands:
 "
@@ -248,7 +221,7 @@ command! VimShowHlItem echo synIDattr(synID(line("."), col("."), 1), "name")
 
 "---------------------------------------------------------------------------
 " Fold:
-"
+
 
 "---------------------------------------------------------------------------
 " Platform:
