@@ -68,22 +68,18 @@ cask karabiner-elements
 cask kindle
 cask liteicon
 cask marshallofsound-google-play-music-player
-cask notion
 cask openinterminal
 cask postman
 cask react-native-debugger
 cask sip
 cask skitch
 cask slack
-cask sourcetree
 cask tableplus
-cask termhere
 cask vanilla
 cask visual-studio-code
 cask vlc
 
 # App Store applications
-appstore 937984704 Amphetamine (3.0.2)
 appstore 1091189122 Bear (1.5.5)
 appstore 406056744 Evernote (7.4)
 appstore 682658836 GarageBand (10.3.1)
@@ -96,5 +92,4 @@ appstore 568494494 Pocket (1.7.9)
 appstore 880001334 Reeder (3.2)
 appstore 1176895641 Spark (2.0.10)
 appstore 425424353 The Unarchiver (4.0.0)
-appstore 410628904 Wunderlist (3.4.8)
 appstore 497799835 Xcode (9.4.1)
