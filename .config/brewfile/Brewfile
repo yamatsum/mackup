@@ -10,6 +10,7 @@ brew autoconf
 brew bat
 brew boost
 brew brew-file
+brew diff-so-fancy
 brew exa
 brew fribidi
 brew fzf
