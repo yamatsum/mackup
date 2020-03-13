@@ -1,1 +1,0 @@
-set diffopt+=vertical
