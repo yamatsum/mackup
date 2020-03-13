@@ -118,6 +118,10 @@ repo = 'billyvg/tigris.nvim'
 on_ft = ['javascript', 'javascript.jsx']
 build = './install.sh'
 
+A Git wrapper so awesome, it should be illegal
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
 #---------------------------------------------------------------------------
 # Test:
 #

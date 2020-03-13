@@ -53,10 +53,6 @@ repo = '/usr/local/opt/fzf'
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
-# A Git wrapper so awesome, it should be illegal
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-
 # A Vim plugin for indent-level based motion.
 [[plugins]]
 repo = 'jeetsukumaran/vim-indentwise'
