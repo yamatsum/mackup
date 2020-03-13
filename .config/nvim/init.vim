@@ -140,8 +140,6 @@ set signcolumn=yes
 " FileType:
 "
 
-autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
-
 autocmd BufRead,BufNewFile Berksfile set filetype=ruby
 
 "---------------------------------------------------------------------------
@@ -171,8 +169,8 @@ inoremap <Right> <Nop>
 " 矢印キーでウィンドウサイズ変更
 noremap <Up> <C-w>+
 noremap <Down> <C-w>-
-noremap <Left> <C-w>>
-noremap <Right> <C-w><
+noremap <Right> <C-w>>
+noremap <Left> <C-w><
 
 " F3で行番号の絶対行数/相対行数の変更"
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
