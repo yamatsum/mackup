@@ -3,6 +3,9 @@
 
 tap dart-lang/dart
 
+tap github/gh
+brew gh
+
 # Other Homebrew packages
 brew ag
 brew anyenv
