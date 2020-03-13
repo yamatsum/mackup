@@ -58,7 +58,7 @@ autocmd filetype nerdtree syn match python_icon ## containedin=NERDTreeFile,p
 autocmd filetype nerdtree highlight php_icon ctermbg=none ctermfg=cyan guifg=#6A9FB5
 autocmd filetype nerdtree syn match php_icon ## containedin=NERDTreeFile,php
 autocmd filetype nerdtree highlight ruby_icon ctermbg=none ctermfg=red guifg=#AC4142
-autocmd filetype nerdtree syn match ruby_icon ## containedin=NERDTreeFile,rb
+autocmd filetype nerdtree syn match ruby_icon ## containedin=NERDTreeFile,rb
 autocmd filetype nerdtree highlight swift_icon ctermbg=none ctermfg=magenta guifg=#75B5AA
 autocmd filetype nerdtree syn match swift_icon ## containedin=NERDTreeFile,swift
 autocmd filetype nerdtree highlight md_icon ctermbg=none ctermfg=magenta guifg=#AA759F
