@@ -1,3 +1,12 @@
+let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-solargraph',
+    \ 'coc-yaml',
+    \ 'coc-json',
+    \ 'coc-snippets',
+    \ 'coc-emmet',
+    \ ]
+
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -14,3 +23,5 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+imap <C-l> <Plug>(coc-snippets-expand-jump)
