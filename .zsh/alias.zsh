@@ -21,7 +21,7 @@ alias dps="d ps" #=docker container ls
 alias dpa="d ps -a"
 alias di="d image"
 alias dip="d image prune"
-alias dis="d images"
+alias dis="d images --digests"
 alias db="d bulid"
 alias dex="d exec -i -t"
 alias dsp="d system prune"
