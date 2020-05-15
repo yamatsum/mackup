@@ -1,4 +1,4 @@
-for file in ~/.zsh/*.zsh; do
+for file in ~/.config/zsh/*.zsh; do
   source $file
 done
 
@@ -32,4 +32,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 export CLOUDSDK_PYTHON="$HOME/.anyenv/envs/pyenv/versions/2.7.14/bin/python"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
