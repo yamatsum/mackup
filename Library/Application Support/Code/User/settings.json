@@ -1,0 +1,43 @@
+{
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontFamily": "RictyDiminishedWithFiraCode-Regular",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s"],
+      "after": ["leader", "leader", "2", "s"]
+    }
+  ],
+  "vim.easymotionMarkerFontFamily": "RictyDiminishedWithFiraCode-Regular",
+  "vim.easymotionMarkerHeight": 24,
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.enableNeovim": true,
+  "breadcrumbs.enabled": true,
+  "eslint.alwaysShowStatus": true,
+  "terminal.integrated.fontFamily": "RictyDiminishedWithFiraCode-Regular,oNe",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.lineHeight": 1.2,
+  "git.autofetch": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "npm.enableScriptExplorer": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "workbench.iconTheme": "ayu",
+  "window.titleBarStyle": "native",
+  "customizeUI.titleBar": "inline",
+  "customizeUI.activityBar": "bottom",
+  "workbench.colorTheme": "Atom One Dark",
+  "sync.gist": "03ebc31902d240d3668ea8eec46e4c6c"
+}
