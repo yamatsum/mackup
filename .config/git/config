@@ -3,7 +3,14 @@
 [user]
   name = yamatsum
 [core]
-	editor = nvim
+  editor = nvim
   pager = delta --plus-color="#103604" --minus-color="#540B07" --theme='TwoDark'
 [ghq]
-	root = ~/.ghq
+  root = ~/.ghq
+[alias]
+  unstage = reset HEAD
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = magenta
+  deleted = red
