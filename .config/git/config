@@ -1,0 +1,9 @@
+[include]
+  path = ~/.config/git/.gitconfig
+[user]
+  name = yamatsum
+[core]
+	editor = nvim
+  pager = delta --plus-color="#103604" --minus-color="#540B07" --theme='TwoDark'
+[ghq]
+	root = ~/.ghq
