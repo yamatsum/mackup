@@ -1,0 +1,25 @@
+[git_branch]
+symbol = " "
+[golang]
+symbol = "ᆏ "
+[nodejs]
+symbol = "ᅹ "
+[package]
+symbol = " "
+[python]
+symbol = "ᅺ "
+[ruby]
+symbol = " "
+[git_status]
+conflicted = ""
+ahead = " "
+behind = " "
+diverged = ""
+untracked = " "
+stashed = ""
+modified = " "
+staged = ""
+renamed = " "
+deleted = " "
+prefix = ""
+suffix = " "
