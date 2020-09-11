@@ -23,3 +23,5 @@ renamed = " "
 deleted = " "
 prefix = ""
 suffix = " "
+[battery]
+disabled = true
