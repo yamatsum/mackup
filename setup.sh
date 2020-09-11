@@ -6,7 +6,7 @@ ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/mackup/.mackup.cfg ~/.mack
 # setup XDG_CONFIG_HOME
 if [[ -z "$XDG_CONFIG_HOME" ]]
 then
-  echo 'export XDG_CONFIG_HOME="$HOME/.config/"' >> ~/.zshenv
+  echo 'export XDG_CONFIG_HOME="$HOME/.config"' >> ~/.zshenv
 fi
 
 # setup zsh
