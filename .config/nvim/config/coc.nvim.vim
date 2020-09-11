@@ -1,10 +1,12 @@
 let g:coc_global_extensions = [
-    \ 'coc-tsserver',
-    \ 'coc-solargraph',
-    \ 'coc-yaml',
+    \ 'coc-emmet',
+    \ 'coc-explorer',
+    \ 'coc-go',
     \ 'coc-json',
     \ 'coc-snippets',
-    \ 'coc-emmet',
+    \ 'coc-solargraph',
+    \ 'coc-tsserver',
+    \ 'coc-yaml',
     \ ]
 
 " Remap keys for gotos
@@ -25,3 +27,9 @@ function! s:show_documentation()
 endfunction
 
 imap <C-l> <Plug>(coc-snippets-expand-jump)
+
+" For coc-explorer
+nmap <silent> <C-e>      :CocCommand explorer<CR>
+vmap <silent> <C-e> <Esc>:CocCommand explorer<CR>
+omap <silent> <C-e>      :CocCommand explorer<CR>
+
