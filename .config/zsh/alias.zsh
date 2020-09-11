@@ -1,28 +1,32 @@
-alias v='nvim'
-alias vi='nvim'
-alias view='nvim -MR'
-alias ls='exa'
-alias la='exa --all'
-alias ll='exa --long'
-alias lla='exa --all --long'
-alias cat='bat --style=plain --theme=OneHalfDark'
-alias conf='cd $XDG_CONFIG_HOME'
-alias tmuxn='tmux new -s'
-alias tmuxa='tmux a -t'
-alias tmuxl='tmux ls'
-alias st='stree'
-alias gh='github'
 # alias ssh='sshrc'
+alias ....='cd ../../..'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias cd='(){builtin cd "$@" && ls}'
+alias cat='bat --style=plain'
+alias cfg='(){cd $XDG_CONFIG_HOME/$1}'
 alias d="docker"
-alias dps="d ps" #=docker container ls
-alias dpa="d ps -a"
+alias db="d bulid"
+alias dex="d exec -i -t"
 alias di="d image"
 alias dip="d image prune"
 alias dis="d images --digests"
-alias db="d bulid"
-alias dex="d exec -i -t"
-alias dsp="d system prune"
 alias dl="d pull"
+alias dpa="d ps -a"
+alias dps="d ps" #=docker container ls
+alias dsp="d system prune"
+alias gh='github'
 alias k='kubectl'
 alias kc='kubectx'
 alias knife='chef exec knife'
+alias la='exa --all'
+alias ll='exa --long'
+alias lla='exa --all --long'
+alias ls='exa'
+alias st='stree'
+alias tmuxa='tmux a -t'
+alias tmuxl='tmux ls'
+alias tmuxn='tmux new -s'
+alias v='nvim'
+alias vi='nvim'
+alias view='nvim -MR'

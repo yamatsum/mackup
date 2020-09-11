@@ -25,7 +25,7 @@ function ssh-fzf () {
   # local selected_host=$(grep "Host " ~/.ssh/config | grep -v '*' | cut -b 6- | fzf-tmux --query "$LBUFFER" )
   local selected_host="$(command egrep -i '^Host\s+.+' $HOME/.ssh/config $(find $HOME/.ssh/conf.d -type f 2>/dev/null) | command egrep -v '[*?]' | awk '{print $2}' | sort | fzf-tmux)"
   if [ -n "$selected_host" ]; then
-    BUFFER="sshrc ${selected_host}"
+    BUFFER="kyrat ${selected_host}"
     zle accept-line
   fi
   zle reset-prompt
@@ -52,9 +52,11 @@ function gibo() {
   fi
 }
 
+export BAT_THEME="OneHalfDark"
+
 export FZF_DEFAULT_OPTS='
   --reverse
-  --prompt="  "
+  --prompt="  "
   --pointer="❯"
   --marker="❯"
   --color=fg:-1,bg:-1,hl:#E06C75,fg+:#ABB2BF,bg+:#2C313C,hl+:#E06C75
@@ -65,7 +67,7 @@ export FZF_DEFAULT_OPTS='
   --bind="ctrl-k:preview-up"
 '
 
-function groot() {
+function gr() {
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     cd `pwd`/`git rev-parse --show-cdup`
   fi
