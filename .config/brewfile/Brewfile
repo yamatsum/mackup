@@ -3,25 +3,23 @@
 
 tap dart-lang/dart
 
-tap github/gh
-brew gh
-
 # Other Homebrew packages
 brew ag
 brew anyenv
 brew autoconf
 brew bat
 brew boost
-brew brew-file
-brew diff-so-fancy
+brew deno
 brew exa
 brew fribidi
 brew fzf
 brew gawk
 brew gdbm
 brew gettext
+brew gh
 brew ghq
 brew gibo
+brew git-delta
 brew gmp
 brew icu4c
 brew jemalloc
@@ -42,10 +40,13 @@ brew neovim
 brew oniguruma
 brew openssl
 brew pcre
+brew pcre2
 brew pkg-config
 brew readline
+brew ripgrep
 brew rlwrap
 brew sqlite
+brew starship
 brew tig
 brew tmux
 brew translate-shell
@@ -66,19 +67,14 @@ cask google-cloud-sdk
 cask google-japanese-ime
 cask hyperswitch
 cask iterm2
-cask karabiner
-cask karabiner-elements
 cask kindle
-cask liteicon
-cask marshallofsound-google-play-music-player
+cask notion
 cask openinterminal
 cask postman
 cask react-native-debugger
 cask sip
 cask skitch
-cask slack
 cask tableplus
-cask vanilla
 cask visual-studio-code
 cask vlc
 
