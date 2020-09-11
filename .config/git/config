@@ -1,10 +1,12 @@
 [include]
   path = ~/.config/git/.gitconfig
 [user]
-  name = yamatsum
+	name = yamatsum
+	email = yamatsum@yahoo-corp.jp
 [core]
   editor = nvim
-  pager = delta --plus-color="#103604" --minus-color="#540B07" --theme='TwoDark'
+  pager = delta
+	excludesfile = /Users/yamatsum/.gitignore_global
 [ghq]
   root = ~/.ghq
 [alias]
@@ -14,3 +16,19 @@
   changed = yellow
   untracked = magenta
   deleted = red
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[delta]
+  syntax-theme = TwoDark
+  line-numbers = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/yamatsum/.stCommitMsg
