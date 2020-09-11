@@ -1,0 +1,33 @@
+{
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "diagnostic.displayByAle": true,
+  "tsserver.locale": "/Users/yamatsum/.anyenv/envs/nodenv/shims/tsserver",
+  "languageserver": {
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    }
+  },
+  "tsserver.enableJavascript": true,
+  "explorer.width": 24,
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.previewAction.onHover": false,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.file.root.template": "  [hidden & 1][root]",
+  "explorer.file.child.template": "  [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+  "explorer.file.column.indent.indentLine": true,
+  "explorer.keyMappings": {
+    "o": ["expandable?", "expand", "open"],
+  }
+}
+
