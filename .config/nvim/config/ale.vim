@@ -1,5 +1,6 @@
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
       \ 'typescriptreact': ['eslint'],
       \ 'go': ['golangci-lint'],
       \ }
@@ -13,8 +14,8 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 " let g:ale_sign_column_always = 1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
+" let g:ale_sign_error = ''
+" let g:ale_sign_warning = ''
 " highlight ALEWarningSign guifg=#e5c07b
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -24,7 +25,7 @@ let g:ale_echo_msg_warning_str = 'W' " W 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_virtualtext_cursor = 1
-let g:ale_virtualtext_prefix = ' ' "
+let g:ale_virtualtext_prefix = ' ' "  
 highlight ALEVirtualTextError guifg=#e06c75
 highlight ALEVirtualTextWarning guifg=#e5c07b
 

@@ -1,8 +1,10 @@
+      " \   'n': '  ᆁ', 'i': '  ', 'R': '  ', 'v': '  ', 'V': '  ', "\<C-v>": '  ',
+      " \   'c': '  ', 's': '  ', 'S': '  ', "\<C-s>": '  ', 't': '  '
 let g:lightline = {
       \ 'colorscheme': 'oNe',
       \ 'mode_map': {
-      \   'n': '  ', 'i': '  ', 'R': '  ', 'v': '  ', 'V': '  ', "\<C-v>": '  ',
-      \   'c': '  ', 's': '  ', 'S': '  ', "\<C-s>": '  ', 't': '  '
+      \   'n': '  ᆁ', 'i': '  ᆀ', 'R': '  ᆂ', 'v': '  ᆅ', 'V': '  ᆅ', "\<C-v>": '  ᆅ',
+      \   'c': '  ᅿ', 's': '  ᆃ', 'S': '  ᆃ', "\<C-s>": '  ᆃ', 't': '  ᆄ'
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -14,7 +16,7 @@ let g:lightline = {
       \   'right': [ ]
       \ },
       \ 'component': {
-      \   'close': '%999X  '
+      \   'close': '%999X  '
       \ },
       \ 'component_function': {
       \   'mode': 'LightLineMode',
@@ -46,6 +48,7 @@ let g:lightline = {
       \ 'tabline_subseparator': { 'left': '', 'right': '' },
       \ 'enable': { 'tabline': 0 }
       \ }
+      " \   'close': '%999X  '
 " lightlineでdeviconを表示
 function! MyFiletype()
   return expand('%:t') =~ 'NERD_tree' ? '' :
@@ -69,7 +72,7 @@ function! LightLineModified()
   if &filetype == "help"
     return " "
   elseif &modified
-    return ""
+    return "+"
   elseif &modifiable
     return " "
   else
@@ -81,7 +84,8 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "" "   
+    return "" "   
+    " return "" "   
   " else
   "   return ""  
   endif
@@ -91,11 +95,13 @@ function! GitBranch()
   if exists("*fugitive#head")
     let branch = fugitive#head()
     return expand('%:t') =~ 'NERD_tree' ? '' :
-          \ branch !=# '' ? ' '.branch : ''
+          \ branch !=# '' ? ' '.branch : ''
+          " \ branch !=# '' ? ' '.branch : ''
   elseif exists("*gitbranch#name")
     let branch = gitbranch#name()
     return expand('%:t') =~ 'NERD_tree' ? '' :
-          \ branch !=# '' ? ' '.branch : ''
+          \ branch !=# '' ? ' '.branch : ''
+          " \ branch !=# '' ? ' '.branch : ''
   endif
   return ''
 endfunction

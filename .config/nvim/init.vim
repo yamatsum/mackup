@@ -44,9 +44,9 @@ set inccommand=split
 
 " カーソル位置記憶
 autocmd BufReadPost *
-      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-      \   exe "normal! g'\"" |
-      \ endif
+      \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
 
 "---------------------------------------------------------------------------
 " Edit:
@@ -54,15 +54,6 @@ autocmd BufReadPost *
 
 " スワップファイルを作成しない
 set noswapfile
-
-" アンドゥファイルを作成しない
-" set noundofile
-
-" バックアップファイルを作成しない
-" set nobackup
-
-" viminfoファイルを作成しない
-" set viminfo=
 
 "---------------------------------------------------------------------------
 " View:
@@ -96,12 +87,6 @@ set list
 " set listchars=trail:˽·_,eol:¬
 set listchars=tab:\│\ ,trail:·,eol:\ ,extends:»,precedes:«
 
-" 特殊記号の2byte割当
-" set ambiwidth=double
-
-" shiftwidth を設定することが可能に(default)
-" set smarttab
-
 " TABキーを押した際にスペースを入れる
 set expandtab
 
@@ -114,18 +99,18 @@ set shiftwidth=2
 highlight Whitespace guifg=#424551
 
 " 余分な空白の色
-highlight ExtraWhitespace ctermfg=blue guifg=#61afef
+highlight ExtraWhitespace guifg=#528BFF
 
 " デフォルトのモードステータスの非表示
 set noshowmode
 
 " ウィンドウの境界線の設定
-set fillchars=vert:\ ,eob:\ 
+set fillchars=vert:\ ,eob:\ ,fold:\ 
 
 " Wrap Guide(80:warning, 120:danger)
-set textwidth=80
-set colorcolumn=+1
-let &colorcolumn="80,".join(range(120,999),",")
+" set textwidth=80
+" set colorcolumn=+1
+" let &colorcolumn="80,".join(range(120,999),",")
 
 " 自動改行OFF
 set formatoptions=q
@@ -134,6 +119,8 @@ hi TabLine guibg=#21252B
 
 set pumblend=20
 
+set winblend=30
+
 set signcolumn=yes
 
 "---------------------------------------------------------------------------
@@ -141,6 +128,8 @@ set signcolumn=yes
 "
 
 autocmd BufRead,BufNewFile Berksfile set filetype=ruby
+
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 "---------------------------------------------------------------------------
 " Mappings:
@@ -172,9 +161,6 @@ noremap <Down> <C-w>-
 noremap <Right> <C-w>>
 noremap <Left> <C-w><
 
-" F3で行番号の絶対行数/相対行数の変更"
-nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
-
 " タブ
 nnoremap tt :<C-u>tabnew<CR>
 nnoremap <Tab> gt
@@ -184,32 +170,20 @@ nnoremap <S-Tab> gT
 nnoremap <leader>] :silent !open -a Google\ Chrome %<CR>
 
 " reload init.vim (can't do undo)
-nnoremap <leader>r :source $MYVIMRC<CR>
-
-" open init.vim
-map <leader>v :e $NVIM_ROOT/init.vim<CR>
+nnoremap <leader>r :source $NVIM_ROOT/init.vim<CR>
 
 "---------------------------------------------------------------------------
 " Commands:
 "
 
-" matchit.vimの有効化
-" if !exists('g:loaded_matchit')
-"   runtime macros/matchit.vim
-" endif
-
 command! -nargs=? Jq call s:Jq(<f-args>)
 function! s:Jq(...)
   if 0 == a:0
-      let l:arg = "."
+    let l:arg = "."
   else
-      let l:arg = a:1
+    let l:arg = a:1
   endif
   execute "%! jq \"" . l:arg . "\""
-endfunction
-command! Qj call s:Qj()
-function! s:Qj() abort
-  %s/\(\n\|\s\)//g
 endfunction
 
 " インサートから抜けるときにペーストモードを解除
@@ -220,6 +194,10 @@ command! VimShowHlItem echo synIDattr(synID(line("."), col("."), 1), "name")
 "---------------------------------------------------------------------------
 " Fold:
 
+function! MyFoldText()
+  return getline(v:foldstart) . ' '
+endfunction
+set foldtext=MyFoldText()
 
 "---------------------------------------------------------------------------
 " Platform:
@@ -230,33 +208,6 @@ set clipboard+=unnamedplus
 
 " マウス
 set mouse=a
-
-"---------------------------------------------------------------------------
-" Others:
-"
-
-function! ProfileCursorMove() abort
-  let profile_file = expand('~/.log/vim-profile.log')
-  if filereadable(profile_file)
-    call delete(profile_file)
-  endif
-
-  normal! gg
-  normal! zR
-
-  execute 'profile start ' . profile_file
-  profile func *
-  profile file *
-
-  augroup ProfileCursorMove
-    autocmd!
-    autocmd CursorHold <buffer> profile pause | q
-  augroup END
-
-  for i in range(100)
-    call feedkeys('j')
-  endfor
-endfunction
 
 "---------------------------------------------------------------------------
 " Plugin Setting:

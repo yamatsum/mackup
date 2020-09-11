@@ -2,8 +2,10 @@
 let g:NERDTreeDirArrows = 1
 " let g:NERDTreeDirArrowExpandable = ''
 " let g:NERDTreeDirArrowCollapsible = ''
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ''
+" let g:NERDTreeDirArrowExpandable = ''
+" let g:NERDTreeDirArrowCollapsible = ''
+" let g:NERDTreeDirArrowExpandable = ' '
+" let g:NERDTreeDirArrowCollapsible = ' '
 " 起動時にブックマークを表示
 let g:NERDTreeShowBookmarks=1
 " NERDTreeを起動時に表示
@@ -20,9 +22,9 @@ let g:NERDTreeChDirMode=2
 " vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
 " omap <silent> <C-e>      :NERDTreeToggle<CR>
 " <C-e>でNERDTreeをオンオフ(タブ間で共有)
-nmap <silent> <C-e>      :NERDTreeTabsToggle<CR>
-vmap <silent> <C-e> <Esc>:NERDTreeTabsToggle<CR>
-omap <silent> <C-e>      :NERDTreeTabsToggle<CR>
+" nmap <silent> <C-e>      :NERDTreeTabsToggle<CR>
+" vmap <silent> <C-e> <Esc>:NERDTreeTabsToggle<CR>
+" omap <silent> <C-e>      :NERDTreeTabsToggle<CR>
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
 " 開始時の余分な説明を消す
