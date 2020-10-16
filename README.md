@@ -26,3 +26,6 @@ Show calender in manu bar
 Prefer tabs when opening documents to "always"
 - [System Preferences-> Dock]
 
+Hide user name from menu bar
+- [System Preferences -> Users & Group -> Login Options]
+

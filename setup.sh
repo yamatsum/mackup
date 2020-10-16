@@ -27,13 +27,6 @@ defaults write com.apple.dock autohide -bool true
 # remove recent app from dock
 defaults write com.apple.dock show-recents -bool FALSE
 
-# △ remove user name from menu bar
-# [System Preferences -> Users & Group -> Login Options]
-defaults write com.apple.systemuiserver menuExtras -array \
-    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-    "/System/Library/CoreServices/Menu Extras/Clock.menu"
-
 # display battery with percentage
 # [menubar -> battery]
 defaults write com.apple.menuextra.battery ShowPercent YES
@@ -63,9 +56,9 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
-# △ tap with one finger
+# tap with one finger
 # [System Preferences-> Trackpad]
-defaults write -g com.apple.mouse.tapBehavior -int 1
+defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 0
 
 # show all filename extensions
 # [finder -> preferences -> Advanced]
