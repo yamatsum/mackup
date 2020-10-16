@@ -73,3 +73,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 # turn off auto rearrange spaces
 # [System Preferences-> Mission Control]
 defaults write com.apple.dock mru-spaces -bool false
+
+# set screenshot location
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
