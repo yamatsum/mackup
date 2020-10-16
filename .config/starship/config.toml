@@ -21,7 +21,7 @@ modified = " "
 staged = ""
 renamed = " "
 deleted = " "
-prefix = ""
-suffix = " "
 [battery]
+disabled = true
+[gcloud]
 disabled = true
