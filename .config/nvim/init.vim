@@ -18,7 +18,7 @@ let g:loaded_python_provider = 0
 let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
 let g:node_host_prog = system('type nodenv &>/dev/null && echo -n "$(nodenv root)/versions/$(cat $(nodenv root)/version | head -n 1)/bin/neovim-node-host" || echo -n $(which node)')
 
-let plugfile = $NVIM_ROOT.'/plugs.vim'
+let plugfile = $NVIM_ROOT.'/plugin.vim'
 if filereadable(plugfile)
   exec 'source' plugfile
 endif
@@ -85,7 +85,7 @@ set noshowcmd
 "不可視文字の文字の可視化
 set list
 " set listchars=trail:˽·_,eol:¬
-set listchars=tab:\│\ ,trail:·,eol:\ ,extends:»,precedes:«
+set listchars=tab:\│\ ,trail:·,extends:»,precedes:«
 
 " TABキーを押した際にスペースを入れる
 set expandtab
@@ -105,6 +105,7 @@ highlight ExtraWhitespace guifg=#528BFF
 set noshowmode
 
 " ウィンドウの境界線の設定
+" set fillchars=vert:\ ,eob:\ ,fold:\ 
 set fillchars=vert:\ ,eob:\ ,fold:\ 
 
 " Wrap Guide(80:warning, 120:danger)
@@ -161,6 +162,11 @@ noremap <Down> <C-w>-
 noremap <Right> <C-w>>
 noremap <Left> <C-w><
 
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+
 " タブ
 nnoremap tt :<C-u>tabnew<CR>
 nnoremap <Tab> gt
@@ -208,13 +214,3 @@ set clipboard+=unnamedplus
 
 " マウス
 set mouse=a
-
-"---------------------------------------------------------------------------
-" Plugin Setting:
-"
-
-let configdir = $NVIM_ROOT.'/config'
-
-for fpath in split(globpath(configdir, '*.vim'), '\n')
-  exe 'source' fpath
-endfor
