@@ -10,17 +10,22 @@ symbol = " "
 symbol = "ᅺ "
 [ruby]
 symbol = " "
+[lua]
+symbol = " "
+[git_commit]
+disabled = true
 [git_status]
-conflicted = ""
-ahead = " "
-behind = " "
-diverged = ""
-untracked = " "
-stashed = ""
-modified = " "
-staged = ""
-renamed = " "
-deleted = " "
+disabled = true
+# conflicted = ""
+# ahead = " "
+# behind = " "
+# diverged = ""
+# untracked = " "
+# stashed = ""
+# modified = " "
+# staged = ""
+# renamed = " "
+# deleted = " "
 [battery]
 disabled = true
 [gcloud]
