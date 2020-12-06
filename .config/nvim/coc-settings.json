@@ -26,7 +26,7 @@
   "explorer.file.root.template": "  [hidden & 1][root]",
   "explorer.file.child.template": "  [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
   "explorer.file.column.indent.indentLine": true,
-  "explorer.keyMappings": {
+  "explorer.keyMappings.global": {
     "o": ["expandable?", "expand", "open"],
   }
 }
