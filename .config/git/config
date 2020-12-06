@@ -11,6 +11,7 @@
   root = ~/.ghq
 [alias]
   unstage = reset HEAD
+  get = !ghq get
 [color "status"]
   added = green
   changed = yellow
