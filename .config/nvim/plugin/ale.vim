@@ -10,6 +10,7 @@ let g:ale_fixers = {
       \ 'typescriptreact': ['prettier'],
       \ 'json': ['prettier'],
       \ 'go': ['gofmt', 'goimports'],
+      \ 'python': ['black'],
       \ }
 
 let g:ale_fix_on_save = 1

@@ -12,6 +12,8 @@ autocmd VimEnter *
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Plug '/Users/yamatsum/.ghq/github.com/yamatsum/wrap-guide.nvim'
+
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -72,6 +74,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight', {'on': 'NERDTreeTabsToggle'}
 " Changes Vim working directory to project root (identified by presence of known directory or file).
 Plug 'airblade/vim-rooter', {'on': 'NERDTreeTabsToggle'}
 
+" Seamless navigation between tmux panes and vim splits
+Plug 'christoomey/vim-tmux-navigator'
 "---------------------------------------------------------------------------
 " View:
 
