@@ -11,10 +11,10 @@ require'nvim-treesitter.configs'.setup {
     'typescript',
     'yaml',
   },
-  -- highlight = {
-  --   enable = true,
-  -- },
-  -- indent = {
-  --   enable = true
-  -- },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true
+  },
 }

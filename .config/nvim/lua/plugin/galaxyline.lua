@@ -39,7 +39,7 @@ require('galaxyline').section.left[3]= {
       if (require('galaxyline.provider_vcs').check_git_workspace()) then
         git_dir = require('galaxyline.provider_vcs').get_git_dir(vim.fn.expand('%:p'))
         current_dir = vim.fn.expand('%:p:h')
-        if git_dir == current_dir then
+        if git_dir == current_dir or git_dir == nil then
           return require('galaxyline.provider_fileinfo').get_current_file_name()
         end
         get_path_from_git_root = current_dir:sub(git_dir:len() + 2)
