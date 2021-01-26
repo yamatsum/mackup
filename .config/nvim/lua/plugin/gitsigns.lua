@@ -6,4 +6,5 @@ require('gitsigns').setup {
     topdelete    = {hl = 'diffremoved', text = '│'},
     changedelete = {hl = 'signifysignchange', text = '│'},
   },
+  sign_priority = 100,
 }

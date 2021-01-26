@@ -1,1 +1,29 @@
 vim.cmd("autocmd BufEnter * lua require'completion'.on_attach()")
+vim.g.completion_enable_snippet = "snippets.nvim"
+vim.g.completion_customize_lsp_label = {
+  Function = " (function)",
+  Method = " (method)",
+  Variable = " (variable)", -- tmp
+  Constant = " (constant)", -- tmp
+  Struct = " (struct)", -- tmp
+  Class = " (class)", -- tmp
+  Interface = " (interface)", -- tmp
+  Text = " (text)", -- tmp
+  Enum = " (enum)",
+  EnumMember = " (enum member)",
+  Module = "{} (module)", -- tmp
+  Color = " (color)", -- tmp
+  Property = " (property)",
+  Field = " (field)", -- tmp
+  Unit = " (unit)",
+  File = " (file)",
+  Value = " (value)",
+  Event = " (event)",
+  Folder = " (folder)",
+  Keyword = " (keyword)", -- tmp
+  Snippet = " (snippet)", -- tmp
+  Operator = " (operator)", -- tmp
+  Reference = " (reference)",
+  TypeParameter = " (type parameter)" -- tmp
+  -- Default = '⍰ (default)',
+}

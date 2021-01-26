@@ -4,7 +4,7 @@ vim.api.nvim_set_keymap('', '<leader>fg', "<cmd>lua require('telescope.builtin')
 require('telescope').setup{
   defaults = {
     prompt_position = "top",
-    prompt_prefix = "   ",
+    prompt_prefix = "   ",
     sorting_strategy = "ascending",
     winblend = 20,
   }
