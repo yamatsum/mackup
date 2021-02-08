@@ -12,9 +12,9 @@ vim.g.ale_fixers = {
 vim.g.ale_lua_luacheck_options = '--globals "vim"'
 vim.g.ale_lua_luafmt_options = "-i 2"
 
--- vim.cmd("autocmd Colorscheme * highlight ALEWarningSign guifg=#282c34")
--- vim.cmd("autocmd Colorscheme * highlight ALEErrorSign guifg=#282c34")
--- vim.cmd("highlight! ALEWarningSign guifg=#282c34")
+vim.cmd("autocmd Colorscheme * highlight ALEWarningSign guifg=#282c34")
+vim.cmd("autocmd Colorscheme * highlight ALEErrorSign guifg=#282c34")
+-- vim.cmd("hi! ALEWarningSign guifg=#282c34")
 -- vim.cmd("highlight! ALEErrorSign guifg=#282c34")
 
 -- guibg transparency 80%
