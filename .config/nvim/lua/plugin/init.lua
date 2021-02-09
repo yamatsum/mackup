@@ -21,6 +21,7 @@ require("packer").startup {
       branch = "main"
     }
     use "norcalli/snippets.nvim"
+    use "phaazon/hop.nvim"
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -39,7 +40,6 @@ require("packer").startup {
     -- vim script
     use "tomtom/tcomment_vim"
     use "jiangmiao/auto-pairs"
-    use "easymotion/vim-easymotion"
     use "tpope/vim-surround"
     use "Yggdroot/indentLine"
     use "lukas-reineke/indent-blankline.nvim"
@@ -76,8 +76,8 @@ vim.tbl_map(
     "telescope",
     "gitsigns",
     "nvim-web-devicons",
+    "hop",
     "indentLine",
-    "vim-easymotion",
     "vim-tmux-navigator",
     "ale"
   }
