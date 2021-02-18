@@ -1,31 +1,21 @@
 [git_branch]
-symbol = " "
+symbol = " "
 [golang]
-symbol = "ᆏ "
+symbol = " "
 [nodejs]
-symbol = "ᅹ "
+symbol = " "
 [package]
-symbol = " "
+symbol = " "
 [python]
-symbol = "ᅺ "
+symbol = " "
 [ruby]
-symbol = " "
+symbol = " "
 [lua]
-symbol = " "
+symbol = " "
 [git_commit]
 disabled = true
 [git_status]
 disabled = true
-# conflicted = ""
-# ahead = " "
-# behind = " "
-# diverged = ""
-# untracked = " "
-# stashed = ""
-# modified = " "
-# staged = ""
-# renamed = " "
-# deleted = " "
 [battery]
 disabled = true
 [gcloud]
