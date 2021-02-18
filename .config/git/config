@@ -2,7 +2,6 @@
   path = ~/.config/git/.gitconfig
 [user]
 	name = yamatsum
-	email = yamatsum@yahoo-corp.jp
 [core]
   editor = nvim
   pager = delta
