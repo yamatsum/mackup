@@ -1,10 +1,8 @@
-      " \   'n': '  ᆁ', 'i': '  ', 'R': '  ', 'v': '  ', 'V': '  ', "\<C-v>": '  ',
-      " \   'c': '  ', 's': '  ', 'S': '  ', "\<C-s>": '  ', 't': '  '
 let g:lightline = {
       \ 'colorscheme': 'oNe',
       \ 'mode_map': {
-      \   'n': '  ᆁ', 'i': '  ᆀ', 'R': '  ᆂ', 'v': '  ᆅ', 'V': '  ᆅ', "\<C-v>": '  ᆅ',
-      \   'c': '  ᅿ', 's': '  ᆃ', 'S': '  ᆃ', "\<C-s>": '  ᆃ', 't': '  ᆄ'
+      \   'n': '  ', 'i': '  ', 'R': '  ', 'v': '  ', 'V': '  ', "\<C-v>": '  ',
+      \   'c': '  ', 's': '  ', 'S': '  ', "\<C-s>": '  ', 't': '  '
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -84,7 +82,7 @@ function! LightLineReadonly()
   if &filetype == "help"
     return ""
   elseif &readonly
-    return "" "   
+    return "" "   
     " return "" "   
   " else
   "   return ""  
@@ -100,7 +98,7 @@ function! GitBranch()
   elseif exists("*gitbranch#name")
     let branch = gitbranch#name()
     return expand('%:t') =~ 'NERD_tree' ? '' :
-          \ branch !=# '' ? ' '.branch : ''
+          \ branch !=# '' ? ' '.branch : ''
           " \ branch !=# '' ? ' '.branch : ''
   endif
   return ''

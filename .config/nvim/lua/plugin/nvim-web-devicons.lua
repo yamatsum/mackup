@@ -5,11 +5,11 @@ require "nvim-web-devicons".setup {
       color = "#6d8086",
       name = "Default"
     },
-		[".gitignore"] = {
-			icon = "",
-			color = "#41535b",
-			name = "GitIgnore"
-		};
+    [".gitignore"] = {
+      icon = "",
+      color = "#41535b",
+      name = "GitIgnore"
+    },
     ["html"] = {
       icon = "",
       color = "#e34c26",
@@ -69,6 +69,26 @@ require "nvim-web-devicons".setup {
       icon = "",
       color = "#6d8086",
       name = "Yaml"
+    },
+    ["yml"] = {
+      icon = "",
+      color = "#6d8086",
+      name = "Yaml"
+    },
+    ["license"] = {
+      icon = "",
+      color = "#d0bf41",
+      name = "License"
+    },
+    ["LICENSE"] = {
+      icon = "",
+      color = "#d0bf41",
+      name = "License"
+    },
+    ["Dockerfile"] = {
+      icon = "",
+      color = "#0db7ed",
+      name = "Dockerfile"
     }
   },
   default = true

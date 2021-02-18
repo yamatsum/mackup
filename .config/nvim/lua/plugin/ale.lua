@@ -7,7 +7,8 @@ vim.g.ale_linters = {
 }
 vim.g.ale_fixers = {
   lua = {"luafmt"},
-  typescript = {"prettier"}
+  typescript = {"prettier"},
+  json = {"prettier"}
 }
 vim.g.ale_lua_luacheck_options = '--globals "vim"'
 vim.g.ale_lua_luafmt_options = "-i 2"

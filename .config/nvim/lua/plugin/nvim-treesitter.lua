@@ -1,20 +1,22 @@
-require'nvim-treesitter.configs'.setup {
+require "nvim-treesitter.configs".setup {
   ensure_installed = {
-    'go',
-    'javascript',
-    'json',
-    'jsdoc',
-    'lua',
-    'python',
-    'ruby',
-    'tsx',
-    'typescript',
-    'yaml',
+    "go",
+    "graphql",
+    "javascript",
+    "jsdoc",
+    "json",
+    "jsonc",
+    "lua",
+    "python",
+    "ruby",
+    "tsx",
+    "typescript",
+    "yaml"
   },
   highlight = {
-    enable = true,
+    enable = true
   },
   indent = {
     enable = true
-  },
+  }
 }

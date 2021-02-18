@@ -22,6 +22,7 @@ require("packer").startup {
     }
     use "norcalli/snippets.nvim"
     use "phaazon/hop.nvim"
+    use "b3nj5m1n/kommentary"
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -36,13 +37,11 @@ require("packer").startup {
       "norcalli/nvim-colorizer.lua",
       config = require "colorizer".setup()
     }
-
-    -- vim script
-    use "tomtom/tcomment_vim"
-    use "jiangmiao/auto-pairs"
-    use "tpope/vim-surround"
-    use "Yggdroot/indentLine"
-    use "lukas-reineke/indent-blankline.nvim"
+    --
+    use "jiangmiao/auto-pairs" -- nvim-autopairs
+    use "tpope/vim-surround" -- surround.nvim
+    use "Yggdroot/indentLine" -- indent-guides.nvim
+    use "lukas-reineke/indent-blankline.nvim" -- indent-guides.nvim
     use "christoomey/vim-tmux-navigator"
     use {
       "iamcco/markdown-preview.nvim",
@@ -74,6 +73,7 @@ vim.tbl_map(
     "nvim-treesitter",
     "completion-nvim",
     "telescope",
+    "kommentary",
     "gitsigns",
     "nvim-web-devicons",
     "hop",

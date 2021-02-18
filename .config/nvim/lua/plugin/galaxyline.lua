@@ -1,8 +1,19 @@
 local colors = {
   bg = "#282C34",
-  fg = "#ABB2BF"
+  fg = "#ABB2BF",
+  fg2 = "#4b5263"
 }
+
+local not_nvimtree = function()
+  if vim.bo.filetype == "NvimTree" then
+    return false
+  end
+  return true
+end
 local buffer_not_empty = function()
+  if vim.bo.filetype == "NvimTree" then
+    return false
+  end
   if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
     return true
   end
@@ -71,13 +82,14 @@ require("galaxyline").section.left[1] = {
     end,
     separator = "  ",
     separator_highlight = {colors.bg, colors.bg},
+    condition = not_nvimtree,
     highlight = {colors.magenta, colors.line_bg}
   }
 }
 require("galaxyline").section.left[2] = {
   FileName = {
     provider = function()
-      if (require("galaxyline.provider_vcs").check_git_workspace()) then
+      if (require("galaxyline.condition").check_git_workspace()) then
         local git_dir = require("galaxyline.provider_vcs").get_git_dir(vim.fn.expand("%:p"))
         local current_dir = vim.fn.expand("%:p:h")
         if git_dir == current_dir .. "/.git" or git_dir == nil then
@@ -96,7 +108,8 @@ require("galaxyline").section.right[1] = {
   FileIcon = {
     provider = "FileIcon",
     condition = buffer_not_empty,
-    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.line_bg}
+    -- highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, colors.line_bg}
+    highlight = {colors.fg2, colors.line_bg}
   }
 }
 require("galaxyline").section.right[2] = {
@@ -105,14 +118,14 @@ require("galaxyline").section.right[2] = {
       return "  " .. vim.bo.filetype
     end,
     condition = buffer_not_empty,
-    highlight = {colors.fg, colors.line_bg}
+    highlight = {colors.fg2, colors.line_bg}
   }
 }
 require("galaxyline").section.right[3] = {
   GitBranch = {
     provider = "GitBranch",
     icon = "     ",
-    condition = require("galaxyline.provider_vcs").check_git_workspace,
-    highlight = {colors.fg, colors.line_bg}
+    condition = require("galaxyline.condition").check_git_workspace and not_nvimtree,
+    highlight = {colors.fg2, colors.line_bg}
   }
 }
