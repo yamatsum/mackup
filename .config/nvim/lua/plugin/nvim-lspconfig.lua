@@ -1,8 +1,8 @@
 local lspconfig = require "lspconfig"
 
 -- https://www.reddit.com/r/neovim/comments/gtta9p/neovim_lsp_how_to_disable_diagnostics/
-vim.lsp.callbacks["textDocument/publishDiagnostics"] = function()
-end
+-- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
+vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
 
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 local sumneko_root_path = vim.fn.stdpath("cache") .. "/lspconfig/sumneko_lua/lua-language-server"

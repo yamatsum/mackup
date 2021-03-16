@@ -8,13 +8,21 @@ require("packer").startup {
     }
     use "neovim/nvim-lspconfig"
     use "nvim-treesitter/nvim-treesitter"
+    use {
+      "yamatsum/nvim-nonicons",
+      requires = {
+        {"kyazdani42/nvim-web-devicons"}
+      }
+    }
     use "nvim-lua/completion-nvim"
     use {
       "nvim-telescope/telescope.nvim",
-      requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+      requires = {
+        {"nvim-lua/popup.nvim"},
+        {"nvim-lua/plenary.nvim"}
+      }
     }
     use "Th3Whit3Wolf/one-nvim"
-    use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
     use {
       "glepnir/galaxyline.nvim",
@@ -23,6 +31,7 @@ require("packer").startup {
     use "norcalli/snippets.nvim"
     use "phaazon/hop.nvim"
     use "b3nj5m1n/kommentary"
+    use "glepnir/indent-guides.nvim"
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -37,16 +46,14 @@ require("packer").startup {
       "norcalli/nvim-colorizer.lua",
       config = require "colorizer".setup()
     }
-    --
-    use "jiangmiao/auto-pairs" -- nvim-autopairs
-    use "tpope/vim-surround" -- surround.nvim
-    use "Yggdroot/indentLine" -- indent-guides.nvim
-    use "lukas-reineke/indent-blankline.nvim" -- indent-guides.nvim
-    use "christoomey/vim-tmux-navigator"
     use {
       "iamcco/markdown-preview.nvim",
       run = "cd app & yarn install"
     }
+    --
+    use "jiangmiao/auto-pairs" -- nvim-autopairs
+    use "tpope/vim-surround" -- sandwich, surround.nvim
+    use "christoomey/vim-tmux-navigator"
     use {
       "dense-analysis/ale"
     }
@@ -67,6 +74,7 @@ vim.tbl_map(
     require("plugin." .. path)
   end,
   {
+    "nvim-nonicons",
     "nvim-tree",
     "galaxyline",
     "nvim-lspconfig",
@@ -75,9 +83,8 @@ vim.tbl_map(
     "telescope",
     "kommentary",
     "gitsigns",
-    "nvim-web-devicons",
     "hop",
-    "indentLine",
+    "indent-guides",
     "vim-tmux-navigator",
     "ale"
   }

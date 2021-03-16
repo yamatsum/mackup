@@ -1,3 +1,4 @@
+local icons = require("nvim-nonicons")
 local colors = {
   bg = "#282C34",
   fg = "#ABB2BF",
@@ -24,7 +25,7 @@ local function file_readonly()
     return ""
   end
   if vim.bo.readonly == true then
-    return " "
+    return " " .. icons.get("lock")
   end
   return ""
 end
@@ -55,12 +56,12 @@ require("galaxyline").section.left[1] = {
         vim.api.nvim_command("hi link GalaxyViMode Keyword")
       end
       local alias = {
-        n = " ",
-        i = " ",
-        c = " ",
-        v = " ",
-        V = " ",
-        [""] = " ",
+        n = icons.get("vim-command-mode"),
+        i = icons.get("vim-insert-mode"),
+        c = icons.get("vim-command-mode"),
+        v = icons.get("vim-visual-mode"),
+        V = icons.get("vim-visual-mode"),
+        [""] = icons.get("vim-normal-mode"),
         [" "] = "a",
         no = "n",
         s = "s",
@@ -124,7 +125,7 @@ require("galaxyline").section.right[2] = {
 require("galaxyline").section.right[3] = {
   GitBranch = {
     provider = "GitBranch",
-    icon = "     ",
+    icon = "    " .. icons.get("git-branch") .. " ",
     condition = require("galaxyline.condition").check_git_workspace and not_nvimtree,
     highlight = {colors.fg2, colors.line_bg}
   }

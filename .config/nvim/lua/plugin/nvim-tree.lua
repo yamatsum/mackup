@@ -1,13 +1,17 @@
+local icons = require "nvim-nonicons"
+
 vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_icons = {
-  default = "",
+  default = icons.get("file"),
   folder = {
     -- default = " ",
-    default = "",
+    default = icons.get("file-directory"),
     -- open = " ",
-    open = "",
-    symlink = ""
+    open = icons.get("file-directory-outline"),
+    symlink = icons.get("file-directory"),
+    empty = icons.get("file-directory-outline"),
+    empty_open = icons.get("file-directory-outline")
   }
 }
 vim.g.nvim_tree_tab_open = 1
@@ -17,11 +21,14 @@ vim.g.nvim_tree_show_icons = {
   folders = 1,
   files = 1
 }
-vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", {})
+local opts = {noremap = true, silent = true}
+vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 vim.g.nvim_tree_bindings = {
   preview = "p",
   dir_up = "u"
 }
+vim.cmd("autocmd Colorscheme * highlight NvimTreeIndentMarker guifg=#3b4048")
+
 --[[ 'edit':            ['<CR>', 'o'],
 'edit_vsplit':     '<C-v>',
 'edit_split':      '<C-x>',
