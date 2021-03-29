@@ -31,7 +31,10 @@ require("packer").startup {
     use "norcalli/snippets.nvim"
     use "phaazon/hop.nvim"
     use "b3nj5m1n/kommentary"
-    use "glepnir/indent-guides.nvim"
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      branch = "lua"
+    }
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -74,7 +77,6 @@ vim.tbl_map(
     require("plugin." .. path)
   end,
   {
-    "nvim-nonicons",
     "nvim-tree",
     "galaxyline",
     "nvim-lspconfig",
@@ -84,7 +86,7 @@ vim.tbl_map(
     "kommentary",
     "gitsigns",
     "hop",
-    "indent-guides",
+    "indent-blankline",
     "vim-tmux-navigator",
     "ale"
   }
