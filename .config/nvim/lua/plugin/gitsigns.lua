@@ -1,10 +1,10 @@
-require('gitsigns').setup {
+require("gitsigns").setup {
   signs = {
-    add          = {hl = 'diffadded'   , text = '│'},
-    change       = {hl = 'signifysignchange', text = '│'},
-    delete       = {hl = 'diffremoved', text = '│'},
-    topdelete    = {hl = 'diffremoved', text = '│'},
-    changedelete = {hl = 'signifysignchange', text = '│'},
+    add = {text = "▎"},
+    change = {text = "▎"},
+    delete = {text = "▎"},
+    topdelete = {text = "▎"},
+    changedelete = {text = "▎"}
   },
-  sign_priority = 100,
+  sign_priority = 100
 }
