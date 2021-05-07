@@ -24,4 +24,4 @@ vim.g.indent_blankline_context_patterns = {
   "import_statement",
   "operation_type"
 }
-vim.cmd("autocmd Colorscheme * highlight IndentBlanklineContextChar guifg=#4b5263 gui=nocombine")
+vim.cmd("highlight IndentBlanklineContextChar guifg=#4b5263 gui=nocombine")

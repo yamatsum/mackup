@@ -15,4 +15,3 @@ require("telescope").setup {
     winblend = 20
   }
 }
--- caret

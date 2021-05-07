@@ -27,4 +27,6 @@ vim.g.nvim_tree_bindings = {
   ["u"] = tree_cb("dir_up")
 }
 vim.api.nvim_set_keymap("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
-vim.cmd("autocmd Colorscheme * highlight NvimTreeIndentMarker guifg=#3b4048")
+vim.cmd("highlight NvimTreeIndentMarker guifg=#3b4048")
+vim.cmd("highlight NvimTreeNormal guibg=#21252B guifg=#9da5b3")
+vim.cmd("highlight NvimTreeVertSplit guifg=#282c34")
