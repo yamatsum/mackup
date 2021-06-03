@@ -21,8 +21,6 @@ fi
 
 export GOENV_DISABLE_GOPATH=1
 
-eval "$(anyenv init -)"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"

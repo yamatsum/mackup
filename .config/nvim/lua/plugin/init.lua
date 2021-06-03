@@ -53,7 +53,6 @@ require("packer").startup {
     }
     use {
       "JoosepAlviste/nvim-ts-context-commentstring",
-      config = [[require('plugin.nvim-ts-context-commentstring')]]
     }
     use {
       "lukas-reineke/indent-blankline.nvim",
@@ -71,10 +70,10 @@ require("packer").startup {
       "yamatsum/nvim-cursorline"
       -- disable = true
     }
-    use {
-      "norcalli/nvim-colorizer.lua",
-      config = require "colorizer".setup()
-    }
+    -- use {
+    --   "norcalli/nvim-colorizer.lua",
+    --   config = require "colorizer".setup()
+    -- }
     use {
       "iamcco/markdown-preview.nvim",
       run = "cd app & yarn install"
