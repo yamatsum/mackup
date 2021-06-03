@@ -1,17 +1,36 @@
+scan_timeout = 1000
 [git_branch]
 symbol = " "
+style = "fg:purple"
 [golang]
 symbol = " "
+style = "fg:blue"
 [nodejs]
 symbol = " "
+style = "fg:green"
 [package]
 symbol = " "
+style = "fg:yellow"
 [python]
 symbol = " "
+style = "fg:blue"
 [ruby]
 symbol = " "
+style = "fg:red"
 [lua]
 symbol = " "
+style = "fg:blue"
+[php]
+symbol = " "
+style = "fg:purple"
+[perl]
+symbol = " "
+style = "fg:blue"
+[java]
+symbol = " "
+style = "fg:red"
+[kotlin]
+symbol = " "
 [git_commit]
 disabled = true
 [git_status]
