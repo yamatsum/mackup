@@ -52,6 +52,10 @@ require("packer").startup {
       config = [[require('plugin.kommentary')]]
     }
     use {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      config = [[require('plugin.nvim-ts-context-commentstring')]]
+    }
+    use {
       "lukas-reineke/indent-blankline.nvim",
       branch = "lua",
       config = [[require('plugin.indent-blankline')]]
