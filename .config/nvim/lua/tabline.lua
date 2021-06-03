@@ -31,4 +31,4 @@ function tabLine()
   return tabline
 end
 
-vim.o.tabline = [[%!luaeval('tabLine()')]]
+vim.opt.tabline = [[%!luaeval('tabLine()')]]
