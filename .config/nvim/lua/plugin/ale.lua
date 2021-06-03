@@ -21,6 +21,3 @@ vim.cmd("highlight ALEErrorSign guifg=#282c34")
 vim.cmd("highlight ALEErrorSignLineNr guifg=#E06C75 guibg=#4D3840 gui=bold")
 vim.cmd("highlight ALEWarningSignLineNr guifg=#E5C07B guibg=#4E4942 gui=bold")
 vim.cmd("highlight ALEInfoSignLineNr guifg=#98C379 guibg=#3E4941 gui=bold")
--- blue #
--- magenta #483A55
--- cyan #334650
