@@ -2,6 +2,7 @@ local icons = require "nvim-nonicons"
 local opts = {noremap = true, silent = true}
 local tree_cb = require "nvim-tree.config".nvim_tree_callback
 
+vim.g.nvim_tree_root_folder_modifier = ":t"
 vim.g.nvim_tree_auto_close = 1
 -- vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_tab_open = 1

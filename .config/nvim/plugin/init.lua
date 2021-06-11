@@ -8,11 +8,11 @@ require("packer").startup {
     }
     use {
       "neovim/nvim-lspconfig",
-      config = [[require('plugin.nvim-lspconfig')]]
+      -- config = [[require('plugin.nvim-lspconfig')]]
     }
     use {
       "nvim-treesitter/nvim-treesitter",
-      config = [[require('plugin.nvim-treesitter')]]
+      -- config = [[require('plugin.nvim-treesitter')]]
     }
     use {
       "yamatsum/nvim-nonicons",
@@ -22,7 +22,7 @@ require("packer").startup {
     }
     use {
       "hrsh7th/nvim-compe",
-      config = [[require('plugin.nvim-compe')]]
+      -- config = [[require('plugin.nvim-compe')]]
     }
     use {
       "nvim-telescope/telescope.nvim",
@@ -30,26 +30,26 @@ require("packer").startup {
         {"nvim-lua/popup.nvim"},
         {"nvim-lua/plenary.nvim"}
       },
-      config = [[require('plugin.telescope')]]
+      -- config = [[require('plugin.telescope')]]
     }
     use "Th3Whit3Wolf/one-nvim"
     use {
       "kyazdani42/nvim-tree.lua",
-      config = [[require('plugin.nvim-tree')]]
+      -- config = [[require('plugin.nvim-tree')]]
     }
     use {
       "glepnir/galaxyline.nvim",
       branch = "main",
-      config = [[require('plugin.galaxyline')]]
+      -- config = [[require('plugin.galaxyline')]]
     }
     use "norcalli/snippets.nvim"
     use {
       "phaazon/hop.nvim",
-      config = [[require('plugin.hop')]]
+      -- config = [[require('plugin.hop')]]
     }
     use {
       "b3nj5m1n/kommentary",
-      config = [[require('plugin.kommentary')]]
+      -- config = [[require('plugin.kommentary')]]
     }
     use {
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -57,14 +57,14 @@ require("packer").startup {
     use {
       "lukas-reineke/indent-blankline.nvim",
       branch = "lua",
-      config = [[require('plugin.indent-blankline')]]
+      -- config = [[require('plugin.indent-blankline')]]
     }
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
         "nvim-lua/plenary.nvim"
       },
-      config = [[require('plugin.gitsigns')]]
+      -- config = [[require('plugin.gitsigns')]]
     }
     use {
       "yamatsum/nvim-cursorline"
@@ -80,17 +80,17 @@ require("packer").startup {
     }
     use {
       "windwp/nvim-autopairs",
-      config = [[require('plugin.nvim-autopairs')]]
+      -- config = [[require('plugin.nvim-autopairs')]]
     }
     --
     use "tpope/vim-surround" -- sandwich, surround.nvim
     use {
       "christoomey/vim-tmux-navigator",
-      config = [[require('plugin.vim-tmux-navigator')]]
+      -- config = [[require('plugin.vim-tmux-navigator')]]
     }
     use {
       "dense-analysis/ale",
-      config = [[require('plugin.ale')]]
+      -- config = [[require('plugin.ale')]]
     }
   end,
   config = {

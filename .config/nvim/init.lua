@@ -53,9 +53,3 @@ map("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 vim.cmd("autocmd BufRead,BufNewFile *.prisma set filetype=prisma")
 vim.cmd("autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc")
-
----------------------------------------------------------------------------
--- Settings:
-
-require("tabline")
-require("plugin")
