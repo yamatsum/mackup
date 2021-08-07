@@ -2,6 +2,7 @@
 -- Initialize:
 
 vim.api.nvim_command("language en_US")
+vim.g.python3_host_prog = vim.env.HOME .. "/.asdf/shims/python"
 vim.g.loaded_python_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
@@ -17,7 +18,7 @@ o.termguicolors = true
 o.shortmess = "IFc"
 o.expandtab = true
 o.showmode = false
-o.fillchars = "eob: "
+o.fillchars = {eob = " "}
 o.pumblend = 10
 o.winblend = 10
 o.completeopt = "menuone,noinsert,noselect"
@@ -29,6 +30,7 @@ o.mouse = "a"
 o.shiftwidth = 2
 
 vim.cmd("colorscheme one-nvim")
+vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
 
 ---------------------------------------------------------------------------
 -- Mappings:
