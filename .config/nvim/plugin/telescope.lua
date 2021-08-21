@@ -7,7 +7,9 @@ vim.api.nvim_set_keymap("", "<leader>fe", "<cmd>lua require('telescope.builtin')
 
 require("telescope").setup {
   defaults = {
-    prompt_position = "top",
+    layout_config = {
+      prompt_position = "top"
+    },
     prompt_prefix = "  " .. icons.get("telescope") .. "  ",
     selection_caret = " ❯ ",
     entry_prefix = "   ",

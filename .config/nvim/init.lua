@@ -1,16 +1,21 @@
 ---------------------------------------------------------------------------
 -- Initialize:
 
-vim.api.nvim_command("language en_US")
-vim.g.python3_host_prog = vim.env.HOME .. "/.asdf/shims/python"
-vim.g.loaded_python_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
+local g = vim.g
+local o = vim.opt
+local c = vim.cmd
+local m = vim.api.nvim_set_keymap
+
+c("language en_US")
+
+g.python3_host_prog = vim.env.HOME .. "/.asdf/shims/python"
+g.loaded_python_provider = 0
+g.loaded_node_provider = 0
+g.loaded_ruby_provider = 0
+g.loaded_perl_provider = 0
 
 ---------------------------------------------------------------------------
 -- Options:
-
-local o = vim.opt
 
 o.number = true
 o.signcolumn = "yes"
@@ -24,34 +29,30 @@ o.winblend = 10
 o.completeopt = "menuone,noinsert,noselect"
 o.ignorecase = true
 o.smartcase = true
-o.inccommand = "split"
 o.clipboard = "unnamedplus"
 o.mouse = "a"
 o.shiftwidth = 2
 
-vim.cmd("colorscheme one-nvim")
-vim.cmd [[au TextYankPost * silent! lua vim.highlight.on_yank()]]
+c("colorscheme one-nvim")
 
 ---------------------------------------------------------------------------
 -- Mappings:
 
-local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local map_ops = {noremap = true, silent = true}
 
-vim.g.mapleader = " "
-map("i", "<C-j>", "<esc>", opts)
-map("v", "<C-j>", "<esc>", opts)
--- map("", "tt", ":<C-u>tabnew<CR>", opts)
-map("", "<Tab>", "gt", opts)
-map("", "<S-Tab>", "gT", opts)
-map("v", "*", '"zy:let @/ = @z<CR>n', opts)
-map("", "<Esc><Esc>", ":nohlsearch<CR>", opts)
+g.mapleader = " "
+m("i", "<C-j>", "<esc>", map_ops)
+m("v", "<C-j>", "<esc>", map_ops)
+-- map("", "tt", ":<C-u>tabnew<CR>", map_ops)
+m("", "<Tab>", "gt", map_ops)
+m("", "<S-Tab>", "gT", map_ops)
+m("v", "*", '"zy:let @/ = @z<CR>n', map_ops)
 
-map("n", "<c-]>", ":lua vim.lsp.buf.definition()<CR>", opts)
-map("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+m("n", "<c-]>", ":lua vim.lsp.buf.definition()<CR>", map_ops)
+m("n", "K", ":lua vim.lsp.buf.hover()<CR>", map_ops)
 
 ---------------------------------------------------------------------------
 -- Filetypes:
 
-vim.cmd("autocmd BufRead,BufNewFile *.prisma set filetype=prisma")
-vim.cmd("autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc")
+c("autocmd BufRead,BufNewFile *.prisma set filetype=prisma")
+c("autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc")
