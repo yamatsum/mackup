@@ -19,5 +19,34 @@
     "key": "shift+tab",
     "command": "workbench.action.previousEditor",
     "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-list.focusPageUp",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "list.focusPageDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-list.focusPageDown",
+    "when": "listFocus && !inputFocus"
   }
 ]

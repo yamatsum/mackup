@@ -3,10 +3,10 @@
 
 local g = vim.g
 local o = vim.opt
-local c = vim.cmd
-local m = vim.api.nvim_set_keymap
+local cmd = vim.cmd
+local map = vim.api.nvim_set_keymap
 
-c("language en_US")
+cmd("lan en_US.UTF-8")
 
 g.python3_host_prog = vim.env.HOME .. "/.asdf/shims/python"
 g.loaded_python_provider = 0
@@ -26,14 +26,13 @@ o.showmode = false
 o.fillchars = {eob = " "}
 o.pumblend = 10
 o.winblend = 10
-o.completeopt = "menuone,noinsert,noselect"
 o.ignorecase = true
 o.smartcase = true
 o.clipboard = "unnamedplus"
 o.mouse = "a"
 o.shiftwidth = 2
 
-c("colorscheme one-nvim")
+cmd("colorscheme one-nvim")
 
 ---------------------------------------------------------------------------
 -- Mappings:
@@ -41,18 +40,17 @@ c("colorscheme one-nvim")
 local map_ops = {noremap = true, silent = true}
 
 g.mapleader = " "
-m("i", "<C-j>", "<esc>", map_ops)
-m("v", "<C-j>", "<esc>", map_ops)
--- map("", "tt", ":<C-u>tabnew<CR>", map_ops)
-m("", "<Tab>", "gt", map_ops)
-m("", "<S-Tab>", "gT", map_ops)
-m("v", "*", '"zy:let @/ = @z<CR>n', map_ops)
+map("i", "<C-j>", "<esc>", map_ops)
+map("v", "<C-j>", "<esc>", map_ops)
+map("", "<Tab>", "gt", map_ops)
+map("", "<S-Tab>", "gT", map_ops)
+map("v", "*", 'y/\\V<C-R>"<CR>', map_ops)
 
-m("n", "<c-]>", ":lua vim.lsp.buf.definition()<CR>", map_ops)
-m("n", "K", ":lua vim.lsp.buf.hover()<CR>", map_ops)
+map("n", "<c-]>", ":lua vim.lsp.buf.definition()<CR>", map_ops)
+map("n", "K", ":lua vim.lsp.buf.hover()<CR>", map_ops)
 
 ---------------------------------------------------------------------------
 -- Filetypes:
 
-c("autocmd BufRead,BufNewFile *.prisma set filetype=prisma")
-c("autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc")
+cmd("autocmd BufRead,BufNewFile *.prisma set filetype=prisma")
+cmd("autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc")

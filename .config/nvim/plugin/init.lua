@@ -14,7 +14,10 @@ require("packer").startup {
         {"kyazdani42/nvim-web-devicons"}
       }
     }
-    use "hrsh7th/nvim-compe"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-nvim-lua"
+    use "hrsh7th/cmp-nvim-lsp"
     use {
       "nvim-telescope/telescope.nvim",
       requires = {
