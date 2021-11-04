@@ -1,5 +1,5 @@
 require("indent_blankline").setup {
-  filetype_exclude = {"help", "packer"},
+  filetype_exclude = {"help", "packer", "TelescopePrompt"},
   show_current_context = true,
   context_patterns = {
     "class",

@@ -5,6 +5,5 @@ require("gitsigns").setup {
     delete = {text = "▎"},
     topdelete = {text = "▎"},
     changedelete = {text = "▎"}
-  },
-  sign_priority = 100
+  }
 }

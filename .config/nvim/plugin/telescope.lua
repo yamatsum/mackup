@@ -1,9 +1,6 @@
-local opts = {noremap = true, silent = true}
+local map = vim.api.nvim_set_keymap
+local map_opts = {noremap = true, silent = true}
 local icons = require "nvim-nonicons"
-
-vim.api.nvim_set_keymap("", "<leader>ff", "<cmd>lua require('telescope.builtin').git_files()<cr>", opts)
-vim.api.nvim_set_keymap("", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-vim.api.nvim_set_keymap("", "<leader>fe", "<cmd>lua require('telescope.builtin').file_browser()<cr>", opts)
 
 require("telescope").setup {
   defaults = {
@@ -17,3 +14,7 @@ require("telescope").setup {
     winblend = 20
   }
 }
+
+map("", "<leader>ff", "<cmd>lua require('telescope.builtin').git_files()<cr>", map_opts)
+map("", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", map_opts)
+map("", "<leader>fe", "<cmd>lua require('telescope.builtin').file_browser()<cr>", map_opts)
