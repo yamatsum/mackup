@@ -1,4 +1,4 @@
-require "nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "go",
     "graphql",
@@ -11,15 +11,16 @@ require "nvim-treesitter.configs".setup {
     "ruby",
     "tsx",
     "typescript",
-    "yaml"
+    "yaml",
   },
   highlight = {
-    enable = true
+    enable = true,
   },
   indent = {
-    enable = true
+    enable = true,
   },
   context_commentstring = {
-    enable = true
-  }
-}
+    enable = true,
+    enable_autocmd = false,
+  },
+})

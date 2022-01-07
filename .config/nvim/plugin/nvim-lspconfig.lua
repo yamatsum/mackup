@@ -1,38 +1,20 @@
-local lspconfig = require "lspconfig"
+vim.cmd([[
+  highlight DiagnosticLineNrError guifg=#E06C75 guibg=#4D3840 gui=bold
+  highlight DiagnosticLineNrWarn guifg=#E5C07B guibg=#4E4942 gui=bold
+  highlight DiagnosticLineNrInfo guifg=#98C379 guibg=#3E4941 gui=bold
+  highlight DiagnosticLineNrHint guifg=#61AFEF guibg=#344559 gui=bold
 
--- https://www.reddit.com/r/neovim/comments/gtta9p/neovim_lsp_how_to_disable_diagnostics/
--- vim.lsp.callbacks["textDocument/publishDiagnostics"] = function() end
-vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+]])
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = vim.fn.stdpath("cache") .. "/lspconfig/sumneko_lua/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/macOS/lua-language-server"
-
-lspconfig.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
-        -- Setup your lua path
-        path = vim.split(package.path, ";")
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {"vim"}
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-        }
-      }
-    }
-  }
-}
-lspconfig.tsserver.setup {}
--- lspconfig.vimls.setup{}
-lspconfig.jsonls.setup {}
-lspconfig.yamlls.setup {}
+vim.diagnostic.config({
+  virtual_text = false,
+  underline = true,
+  float = {
+    border = "rounded",
+  },
+})

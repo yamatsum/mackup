@@ -57,7 +57,7 @@ require("lualine").setup(
         }
       },
       lualine_b = {
-        "filename"
+        "filename",
       },
       lualine_c = {},
       lualine_x = {},
