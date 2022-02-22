@@ -30,6 +30,12 @@ local server_configs = {
       },
     },
   },
+  ["tsserver"] = {
+    on_attach = function(client)
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end,
+  },
 }
 
 lsp_installer.on_server_ready(function(server)

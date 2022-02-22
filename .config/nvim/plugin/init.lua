@@ -21,10 +21,11 @@ require("packer").startup({
       "nvim-telescope/telescope.nvim",
       requires = { { "nvim-lua/plenary.nvim" } },
     })
-    use("Th3Whit3Wolf/one-nvim")
     use("projekt0n/github-nvim-theme")
     use("kyazdani42/nvim-tree.lua")
+    use("ahmedkhalf/project.nvim")
     use("nvim-lualine/lualine.nvim")
+    use("rafcamlet/tabline-framework.nvim")
     use("norcalli/snippets.nvim")
     use("phaazon/hop.nvim")
     use("b3nj5m1n/kommentary")

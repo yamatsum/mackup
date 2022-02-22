@@ -1,5 +1,5 @@
-require("indent_blankline").setup {
-  filetype_exclude = {"help", "packer", "TelescopePrompt"},
+require("indent_blankline").setup({
+  filetype_exclude = { "help", "packer", "TelescopePrompt" },
   show_current_context = true,
   context_patterns = {
     "class",
@@ -21,7 +21,8 @@ require("indent_blankline").setup {
     "try_statement",
     "catch_clause",
     "import_statement",
-    "operation_type"
-  }
-}
-vim.cmd("highlight IndentBlanklineContextChar guifg=#4b5263 gui=nocombine")
+    "operation_type",
+  },
+})
+-- TODO
+vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#2c313a" })

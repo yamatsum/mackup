@@ -1,4 +1,3 @@
--- if packer_plugins["nvim-tree.lua"] and packer_plugins["nvim-tree.lua"].loaded then
 local icons = require("nvim-nonicons")
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
@@ -11,6 +10,7 @@ vim.g.nvim_tree_show_icons = {
   files = 1,
   folder_arrows = 1,
 }
+vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.nvim_tree_icons = {
   default = icons.get("file"),
   folder = {
@@ -25,15 +25,16 @@ vim.g.nvim_tree_icons = {
   },
 }
 vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>", { silent = true })
-vim.cmd("highlight NvimTreeIndentMarker guifg=#3b4048")
-vim.cmd("highlight NvimTreeNormal guibg=#21252B guifg=#9da5b3")
-vim.cmd("highlight NvimTreeVertSplit guifg=#282c34")
--- vim.cmd("highlight NvimTreeStatusLine guibg=#21252B")
--- vim.cmd("highlight NvimTreeStatusLineNc guibg=#21252B")
+vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = "#24292e" })
 
 require("nvim-tree").setup({
   open_on_tab = true,
   auto_close = true,
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
   view = {
     width = 26,
     mappings = {
@@ -46,5 +47,3 @@ require("nvim-tree").setup({
     },
   },
 })
-
--- end

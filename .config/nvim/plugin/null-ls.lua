@@ -5,6 +5,7 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua.with({
       extra_args = { "--indent-type", "Spaces", "--indent-width", "2" },
     }),
+    null_ls.builtins.formatting.prettier,
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then

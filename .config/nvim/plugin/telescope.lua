@@ -16,6 +16,3 @@ require("telescope").setup({
 
 map("", "<leader>ff", require("telescope.builtin").git_files, { silent = true })
 map("", "<leader>fg", require("telescope.builtin").live_grep, { silent = true })
-map("", "<leader>fe", function()
-  require("telescope.builtin").file_browser({ dir_icon = icons.get("file-directory-outline") })
-end, { silent = true })
