@@ -1,11 +1,12 @@
 local icons = require("nvim-nonicons")
-local theme = require("lualine.themes.github")
+local theme = require("github-theme.plugins.lualine")
+local util = require("github-theme.util")
 local p = require("github-theme.palette").get_palette("dark")
 
 local get_group_color = function(color)
   local group = {
-    a = { bg = p.bg, fg = color },
-    b = { bg = p.bg, fg = p.fg },
+    a = { bg = p.bg, fg = util.darken(color, 0.4, p.bg) },
+    b = { bg = p.bg, fg = p.syntax.comment },
     c = { bg = p.bg, fg = p.syntax.comment },
     y = { bg = p.bg, fg = p.syntax.comment },
     z = { bg = p.bg, fg = p.syntax.comment },

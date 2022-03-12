@@ -11,7 +11,12 @@ vim.cmd([[
   sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
   sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
 ]])
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
+
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
+  end,
+})
 
 vim.diagnostic.config({
   virtual_text = false,
