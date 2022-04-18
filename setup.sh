@@ -1,3 +1,6 @@
+# show library in home
+# [Finder -> option + Go]
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo  ~/Library
 # setup symlink for iCloud
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/iCloud
 ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/mackup/.mackup ~/.mackup
@@ -11,9 +14,6 @@ fi
 
 # setup zsh
 echo 'source "$XDG_CONFIG_HOME/zsh/zshrc"' >> ~/.zshrc
-
-# change default shell
-chsh -s /bin/zsh
 
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -64,9 +64,6 @@ defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 0
 # [finder -> preferences -> Advanced]
 defaults write -g AppleShowAllExtensions -bool true
 
-# show library in home
-# [Finder -> option + Go]
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo  ~/Library
 # show path bar in finder
 defaults write com.apple.finder ShowPathbar -bool true 
 
