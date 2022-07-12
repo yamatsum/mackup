@@ -1,10 +1,9 @@
-# alias ssh='sshrc'
 alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias cd='(){builtin cd "$@" && ls}'
 alias cat='bat --style=plain'
-alias cfg='(){cd $XDG_CONFIG_HOME/$1}'
+alias conf='(){cd $XDG_CONFIG_HOME/$1}'
 alias d="docker"
 alias di="docker image"
 alias dc="docker container"
@@ -19,5 +18,5 @@ alias lla='exa --all --long'
 alias tree='exa --tree'
 alias t='tmux'
 alias v='nvim'
-alias vi='nvim'
-alias view='nvim -MR'
+# alias vi='nvim'
+# alias view='nvim -MR'

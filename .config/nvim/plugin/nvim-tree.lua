@@ -1,42 +1,29 @@
-local icons = require("nvim-nonicons")
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
+local nonicons_extention = require("nvim-nonicons.extentions.nvim-tree")
 
-vim.g.nvim_tree_root_folder_modifier = ":t"
--- vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
-  folder_arrows = 1,
-}
-vim.g.nvim_tree_respect_buf_cwd = 1
-vim.g.nvim_tree_icons = {
-  default = icons.get("file"),
-  folder = {
-    default = icons.get("file-directory"),
-    open = icons.get("file-directory-outline"),
-    symlink = icons.get("file-directory"),
-    symlink_open = icons.get("file-directory-outline"),
-    empty = icons.get("file-directory-outline"),
-    empty_open = icons.get("file-directory-outline"),
-    arrow_open = icons.get("chevron-down"),
-    arrow_closed = icons.get("chevron-right"),
-  },
-}
 vim.keymap.set("n", "<C-e>", ":NvimTreeToggle<CR>", { silent = true })
 vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { fg = "#24292e" })
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+      vim.cmd("quit")
+    end
+  end,
+})
 
 require("nvim-tree").setup({
   open_on_tab = true,
-  auto_close = true,
   update_cwd = true,
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
+  respect_buf_cwd = true,
+  git = {
+    enable = false,
+  },
   view = {
-    width = 26,
     mappings = {
       list = {
         { key = { "p" }, cb = tree_cb("preview") },
@@ -45,5 +32,21 @@ require("nvim-tree").setup({
         { key = "<Tab>", cb = ":tabNext<CR>" },
       },
     },
+  },
+  renderer = {
+    root_folder_modifier = ":t",
+    -- group_empty = true,
+    icons = {
+      padding = "  ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+      },
+      glyphs = nonicons_extention.glyphs,
+    },
+    -- indent_markers = {
+    --   enable = true,
+    -- },
   },
 })

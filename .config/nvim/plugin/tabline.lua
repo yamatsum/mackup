@@ -10,7 +10,7 @@ require("tabline_framework").setup({
       f.add("  ")
     end)
   end,
-  hl = { fg = "#666666", bg = "#24292e" },
-  hl_sel = { fg = "#c9d1d9", bg = "#24292e" },
-  hl_fill = { fg = "#282c34", bg = "#24292e" },
+  hl = { fg = "#666666", bg = "" },
+  hl_sel = { fg = "#c9d1d9", bg = "" },
+  hl_fill = { fg = "", bg = "" },
 })

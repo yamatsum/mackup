@@ -1,4 +1,45 @@
+local lspconfig = require("lspconfig")
 local hi = vim.api.nvim_set_hl
+local on_attach = function(client, bufnr)
+  local opts = { buffer = bufnr, silent = true }
+  -- back ctrl-o
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+end
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
+local servers = { "rust_analyzer", "tsserver" }
+for _, server in ipairs(servers) do
+  lspconfig[server].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end
+
+lspconfig.sumneko_lua.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        version = "LuaJIT",
+      },
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+})
 
 hi(0, "DiagnosticLineNrError", { fg = "#E06C75", bg = "#4D3840", bold = true })
 hi(0, "DiagnosticLineNrWarn", { fg = "#E5C07B", bg = "#4E4942", bold = true })
@@ -25,7 +66,3 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
-
--- back ctrl-o
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { silent = true })
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { silent = true })

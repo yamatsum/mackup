@@ -12,14 +12,12 @@ setopt auto_cd
 
 key=$(ssh-add -l)
 if [ ${key} = 'The agent has no identities.' ] && [ -e ~/.ssh/id_rsa ]; then
-  ssh-add -K ~/.ssh/id_rsa
+  ssh-add --apple-use-keychain
 fi
 
 if [ -f $(brew --prefix)/etc/brew-wrap ];then
   source $(brew --prefix)/etc/brew-wrap
 fi
-
-export GOENV_DISABLE_GOPATH=1
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -1,19 +1,25 @@
 local icons = require("nvim-nonicons")
 local theme = require("github-theme.plugins.lualine")
 local util = require("github-theme.util")
+local nonicons_extention = require("nvim-nonicons.extentions.lualine")
 local p = require("github-theme.palette").get_palette("dark")
 
+vim.api.nvim_set_hl(0, "StatusLine", { fg = p.syntax.comment, bg = "#24292e" })
+
 local get_group_color = function(color)
+  local normal = { bg = "#24292e", fg = p.syntax.comment }
   local group = {
-    a = { bg = p.bg, fg = util.darken(color, 0.4, p.bg) },
-    b = { bg = p.bg, fg = p.syntax.comment },
-    c = { bg = p.bg, fg = p.syntax.comment },
-    y = { bg = p.bg, fg = p.syntax.comment },
-    z = { bg = p.bg, fg = p.syntax.comment },
+    a = { bg = "#24292e", fg = util.darken(color, 0.4, p.bg) },
+    b = normal,
+    c = normal,
+    x = normal,
+    y = normal,
+    z = normal,
   }
   return group
 end
 theme = {
+  alt_bg = get_group_color(p.green),
   normal = get_group_color(p.green),
   insert = get_group_color(p.bright_blue),
   command = get_group_color(p.bright_red),
@@ -22,38 +28,15 @@ theme = {
   terminal = get_group_color(p.orange),
 }
 
-vim.cmd("hi StatusLine guibg=NONE")
-
-local mode = {
-  NORMAL = { icon = icons.get("vim-normal-mode") },
-  INSERT = { icon = icons.get("vim-insert-mode") },
-  VISUAL = { icon = icons.get("vim-visual-mode") },
-  REPLACE = { icon = icons.get("vim-replace-mode") },
-  COMMAND = { icon = icons.get("vim-command-mode") },
-  ["V-LINE"] = { icon = icons.get("vim-visual-mode") },
-}
-
 require("lualine").setup({
   options = {
-    -- theme = custom_dark,
     theme = theme,
-    section_separators = { left = "", right = "" },
-    component_separators = { left = "", right = "" },
-    disabled_filetypes = { "NvimTree" },
+    section_separators = "",
+    component_separators = "",
+    globalstatus = true,
   },
   sections = {
-    lualine_a = {
-      {
-        "mode",
-        fmt = function(str)
-          if mode[str] ~= nil then
-            return "  " .. mode[str].icon
-          end
-
-          return str:sub(1, 1)
-        end,
-      },
-    },
+    lualine_a = { nonicons_extention.mode },
     lualine_b = {
       {
         "filename",
@@ -62,16 +45,11 @@ require("lualine").setup({
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {
+    lualine_y = {},
+    lualine_z = {
       {
         "branch",
         icon = icons.get("git-branch"),
-      },
-    },
-    lualine_z = {
-      {
-        "filetype",
-        colored = false,
       },
     },
   },
