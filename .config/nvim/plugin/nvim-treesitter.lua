@@ -1,4 +1,8 @@
-require("nvim-treesitter.configs").setup({
+if vim.g.vscode then
+  return
+end
+
+require("nvim-treesitter.configs").setup {
   ensure_installed = {
     "go",
     "graphql",
@@ -16,11 +20,8 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
   },
-  indent = {
-    enable = true,
-  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
   },
-})
+}

@@ -1,10 +1,14 @@
-local icons = require("nvim-nonicons")
-local theme = require("github-theme.plugins.lualine")
-local util = require("github-theme.util")
-local nonicons_extention = require("nvim-nonicons.extentions.lualine")
-local p = require("github-theme.palette").get_palette("dark")
+if vim.g.vscode then
+  return
+end
 
-vim.api.nvim_set_hl(0, "StatusLine", { fg = p.syntax.comment, bg = "#24292e" })
+local icons = require "nvim-nonicons"
+local theme = require "github-theme.plugins.lualine"
+local util = require "github-theme.util"
+local nonicons_extention = require "nvim-nonicons.extentions.lualine"
+local p = require("github-theme.palette").get_palette "dark"
+
+-- vim.api.nvim_set_hl(0, "StatusLine", { fg = p.syntax.comment, bg = "#24292e" })
 
 local get_group_color = function(color)
   local normal = { bg = "#24292e", fg = p.syntax.comment }
@@ -28,13 +32,8 @@ theme = {
   terminal = get_group_color(p.orange),
 }
 
-require("lualine").setup({
-  options = {
-    theme = theme,
-    section_separators = "",
-    component_separators = "",
-    globalstatus = true,
-  },
+require("lualine").setup {
+  options = { theme = theme },
   sections = {
     lualine_a = { nonicons_extention.mode },
     lualine_b = {
@@ -49,8 +48,8 @@ require("lualine").setup({
     lualine_z = {
       {
         "branch",
-        icon = icons.get("git-branch"),
+        icon = icons.get "git-branch",
       },
     },
   },
-})
+}

@@ -1,4 +1,8 @@
-require("gitsigns").setup({
+if vim.g.vscode then
+  return
+end
+
+require("gitsigns").setup {
   signs = {
     add = { text = "▎" },
     change = { text = "▎" },
@@ -6,4 +10,4 @@ require("gitsigns").setup({
     topdelete = { text = "" },
     changedelete = { text = "" },
   },
-})
+}
