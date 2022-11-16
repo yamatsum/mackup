@@ -31,6 +31,8 @@ symbol = " "
 style = "fg:red"
 [kotlin]
 symbol = " "
+[docker_context]
+symbol = " "
 [git_commit]
 disabled = true
 [git_status]
