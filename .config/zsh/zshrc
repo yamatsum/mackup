@@ -7,9 +7,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 touch ~/.hushlogin
 
-# Auto CD (by directory name or filepath)
-setopt auto_cd
-
 key=$(ssh-add -l)
 if [ ${key} = 'The agent has no identities.' ] && [ -e ~/.ssh/id_rsa ]; then
   ssh-add --apple-use-keychain

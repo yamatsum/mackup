@@ -5,10 +5,6 @@ export FZF_DEFAULT_OPTS='
   --prompt="  "
   --pointer="❯"
   --marker="❯"
-  --color=fg:-1,bg:-1,hl:#E06C75,fg+:#ABB2BF,bg+:#2C313C,hl+:#E06C75
-  --color=info:#98c379,prompt:#61afef,pointer:#61afef,marker:#e5c07b,spinner:#61afef,header:#61afef,gutter:#282C34
-  --bind="ctrl-f:preview-page-down"
-  --bind="ctrl-b:preview-page-up"
-  --bind="ctrl-j:preview-down"
-  --bind="ctrl-k:preview-up"
 '
+  # --color=fg:-1,bg:-1,hl:#E06C75,fg+:#ABB2BF,bg+:#2C313C,hl+:#E06C75
+  # --color=info:#98c379,prompt:#61afef,pointer:#61afef,marker:#e5c07b,spinner:#61afef,header:#61afef,gutter:#282C34

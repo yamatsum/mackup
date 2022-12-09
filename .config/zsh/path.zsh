@@ -1,14 +1,10 @@
 export NVIM_ROOT="$XDG_CONFIG_HOME/nvim"
-export GOPATH=$HOME/.go
 export CLOUDSDK_PYTHON="$HOME/.asdf/shims/python"
 export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/config.toml
-export ANDROID_SDK="$HOME/Library/Android/sdk"
 export PATH="$PATH:/usr/local/bin:/usr/bin:/usr/local/sbin"
-export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 export PATH="$PATH:/usr/local/opt/gnu-tar/libexec/gnubin"
 export PATH="$PATH:$HOME/.yarn/bin:$XDG_CONFIG_HOME/yarn/global/node_modules/.bin"
 export PATH="$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 export PATH="$PATH:/usr/local/opt/mysql@5.7/bin"
 export PATH="$PATH:~/.Development/flutter/bin"
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.asdf/installs/rust/stable/bin"
