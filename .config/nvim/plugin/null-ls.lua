@@ -10,7 +10,16 @@ null_ls.setup {
     null_ls.builtins.formatting.stylua.with {
       extra_args = { "--indent-type", "Spaces", "--indent-width", "2", "--call-parentheses", "None" },
     },
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier.with {
+      condition = function(utils)
+        return utils.root_has_file { "package.json" }
+      end,
+    },
+    null_ls.builtins.formatting.deno_fmt.with {
+      condition = function(utils)
+        return utils.root_has_file { "deno.json" }
+      end,
+    },
   },
   on_attach = function(client, bufnr)
     if client.supports_method "textDocument/formatting" then

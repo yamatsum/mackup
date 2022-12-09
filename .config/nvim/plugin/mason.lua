@@ -12,6 +12,6 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-  ensure_installed = { "rust_analyzer", "tsserver", "sumneko_lua" },
+  ensure_installed = { "rust_analyzer", "tsserver", "denols", "sumneko_lua" },
   automatic_installation = true,
 }

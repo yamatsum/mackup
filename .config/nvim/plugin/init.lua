@@ -7,7 +7,7 @@ return require("packer").startup {
     use "nvim-lua/plenary.nvim"
     use { "williamboman/mason.nvim", requires = { "williamboman/mason-lspconfig.nvim" } }
     use "nvim-treesitter/nvim-treesitter"
-    use { "yamatsum/nvim-nonicons", branch = "feat/lua", requires = { "kyazdani42/nvim-web-devicons" } }
+    use { "yamatsum/nvim-nonicons", requires = { "nvim-tree/nvim-web-devicons" } }
     use "projekt0n/github-nvim-theme"
     use {
       "hrsh7th/nvim-cmp",
